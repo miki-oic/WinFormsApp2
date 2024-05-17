@@ -8,31 +8,52 @@ namespace WinFormsApp2
 {
     public class Field
     {
+
+        private string name = "";
+
+        public Field()
+        {
+
+        }
+
         public string getName()
         {
 
-            return "";
+            return name;
 
         }
+
+        protected string setName(string name)
+        {
+
+            return this.name = name;
+
+        }
+
     }
 
     public class Castle : Field
     {
 
-    }
-
-    public class Player : Magician
-    {
-        public string getName()
+        public Castle(string name)
         {
-            throw new NotImplementedException();
+
+            setName(name);
+
         }
+
     }
 
-    public interface Magician
+    public class Colosseum : Field
     {
 
-        string getName();
+        public Colosseum(string name)
+        {
+
+            setName(name);
+
+        }
 
     }
+
 }
