@@ -30,13 +30,15 @@
         {
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(184, 161);
+            button1.Location = new Point(129, 97);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(142, 35);
+            button1.Size = new Size(108, 25);
             button1.TabIndex = 0;
             button1.Text = "戦士の攻撃";
             button1.UseVisualStyleBackColor = true;
@@ -44,21 +46,34 @@
             // 
             // button2
             // 
-            button2.Location = new Point(494, 161);
+            button2.Location = new Point(346, 97);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
-            button2.Size = new Size(142, 35);
+            button2.Size = new Size(108, 25);
             button2.TabIndex = 1;
             button2.Text = "魔法使いの攻撃";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(241, 175);
+            button3.Name = "button3";
+            button3.Size = new Size(108, 25);
+            button3.TabIndex = 2;
+            button3.Text = "最新の情報に更新";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -68,5 +83,6 @@
 
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }

@@ -30,6 +30,8 @@ namespace WinFormsApp2
 
             initialize();
 
+            update();
+
         }
 
         private void initialize()
@@ -40,8 +42,16 @@ namespace WinFormsApp2
             // 職業
             comboBox1.Enabled = false; // 表示のみ
             // ヒットポイント
-            textBox2.Text = player.getHitPoint().ToString();
             textBox2.Enabled = false; // 表示のみ
+
+        }
+
+        public void update()
+        {
+
+            // ヒットポイント
+            textBox2.Text = player.getHitPoint().ToString();
+
             // ステータス
             if (player.isOk())
             {
