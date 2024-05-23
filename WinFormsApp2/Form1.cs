@@ -4,7 +4,11 @@ namespace WinFormsApp2
     {
         public Form1()
         {
+
             InitializeComponent();
+
+            new FighterForm(new Fighter("ƒAƒŠƒIƒ“", 2500, 80)).Show();
+
         }
     }
 }
