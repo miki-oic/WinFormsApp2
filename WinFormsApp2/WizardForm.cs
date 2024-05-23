@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-
-    public class FighterForm : PlayerForm
+    public class WizardForm : PlayerForm
     {
 
-        public FighterForm(Fighter fighter) : base(fighter)
+        public WizardForm(Wizard wizard) : base(wizard)
         {
 
             // 職業
-            addClassName("戦士");
+            addClassName("魔法使い");
 
         }
 

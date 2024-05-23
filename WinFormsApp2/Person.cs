@@ -16,8 +16,8 @@ namespace WinFormsApp2
         public Person(string name)
         {
 
-            this.name = name;
             //Name = name;
+            this.name = name;
 
         }
 

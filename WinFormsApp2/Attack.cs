@@ -10,7 +10,7 @@ namespace WinFormsApp2
     public class Attack
     {
 
-        public Attack(Player attacker, Player target, Field field)
+        public Attack(Attacker attacker, Player target, Field field)
         {
 
             target.damagedBy(attacker);
@@ -25,7 +25,7 @@ namespace WinFormsApp2
         /// <summary>
         /// 攻撃します。
         /// </summary>
-        /// <returns>攻撃力</returns>
+        /// <returns>攻撃値</returns>
         int attack();
 
     }

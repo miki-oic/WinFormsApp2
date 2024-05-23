@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
@@ -12,6 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp2
 {
+
     public partial class PlayerForm : Form
     {
 
@@ -19,6 +21,8 @@ namespace WinFormsApp2
 
         public PlayerForm(Player player)
         {
+
+            //Debug.Assert(player != null);
 
             InitializeComponent();
 
@@ -39,7 +43,7 @@ namespace WinFormsApp2
             textBox2.Text = player.getHitPoint().ToString();
             textBox2.Enabled = false; // 表示のみ
             // ステータス
-            if (player.isEnergetic())
+            if (player.isOk())
             {
 
                 label5.Text = "正常";
@@ -54,7 +58,7 @@ namespace WinFormsApp2
             else
             {
 
-                label5.Text = "---";
+                label5.Text = "？？？";
 
             }
 
@@ -69,4 +73,5 @@ namespace WinFormsApp2
         }
 
     }
+
 }

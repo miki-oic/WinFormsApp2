@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Field
+
+    public abstract class Field
     {
 
         private string name = "";

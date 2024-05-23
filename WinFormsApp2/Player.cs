@@ -36,10 +36,10 @@ namespace WinFormsApp2
 
         public abstract int attack();
 
-        public Player damagedBy(Player enemy)
+        public Player damagedBy(Attacker attacker)
         {
 
-            int attackPoint = enemy.attack();
+            int attackPoint = attacker.attack();
             if (attackPoint < hitPoint)
             {
 
@@ -58,10 +58,10 @@ namespace WinFormsApp2
         }
 
         /// <summary>
-        /// 気力十分かを返す。
+        /// 大丈夫かを返す。
         /// </summary>
-        /// <returns>気力十分の場合 true</returns>
-        public bool isEnergetic()
+        /// <returns>大丈夫な場合 true</returns>
+        public bool isOk()
         {
 
             return hitPoint > 0;
@@ -75,7 +75,7 @@ namespace WinFormsApp2
         public bool isCollapsed()
         {
 
-            return !isEnergetic();
+            return !isOk();
 
         }
 
@@ -109,12 +109,16 @@ namespace WinFormsApp2
 
         public override int attack()
         {
-            throw new NotImplementedException();
+
+            return slash();
+
         }
 
-        public Fighter slash()
+        public int slash()
         {
-            throw new NotImplementedException();
+
+            return strengh;
+
         }
 
     }
@@ -147,12 +151,16 @@ namespace WinFormsApp2
 
         public override int attack()
         {
-            throw new NotImplementedException();
+
+            return spell();
+
         }
 
-        public Wizard spell()
+        public int spell()
         {
-            throw new NotImplementedException();
+
+            return magicPoint;
+
         }
 
     }
