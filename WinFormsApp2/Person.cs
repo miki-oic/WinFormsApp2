@@ -8,12 +8,23 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
-    public class Person
+    public interface Person
+    {
+
+        /// <summary>
+        /// 名前を返します。
+        /// </summary>
+        /// <returns>名前</returns>
+        string getName();
+
+    }
+
+    public class PersonModel : Person
     {
 
         private string name;
 
-        public Person(string name)
+        public PersonModel(string name)
         {
 
             //Name = name;

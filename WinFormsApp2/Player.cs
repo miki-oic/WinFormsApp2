@@ -8,19 +8,49 @@ using System.Xml.Linq;
 namespace WinFormsApp2
 {
 
-    public abstract class Player : Person, Attacker
+    public interface Player : Person, Attacker
+    {
+
+        /// <summary>
+        /// 耐久力を返します。
+        /// </summary>
+        /// <returns>耐久力</returns>
+        int getHitPoint();
+
+        /// <summary>
+        /// 攻撃を受けます。
+        /// </summary>
+        /// <param name="attacker"></param>
+        /// <returns>自身のオブジェクト</returns>
+        Player damagedBy(Attacker attacker);
+
+        /// <summary>
+        /// 大丈夫かを返す。
+        /// </summary>
+        /// <returns>大丈夫な場合 true</returns>
+        bool isOk();
+
+        /// <summary>
+        /// 気絶しているかを返す。
+        /// </summary>
+        /// <returns>気絶している場合 true</returns>
+        bool isCollapsed();
+
+    }
+
+    public abstract class PlayerModel : PersonModel, Player
     {
 
         private int hitPoint;
 
-        public Player() : base("ゲストプレイヤー")
+        public PlayerModel() : base("ゲストプレイヤー")
         {
 
             hitPoint = 100;
 
         }
 
-        public Player(string name, int hitPoint) : base(name)
+        public PlayerModel(string name, int hitPoint) : base(name)
         {
 
             this.hitPoint = hitPoint;
@@ -57,10 +87,6 @@ namespace WinFormsApp2
 
         }
 
-        /// <summary>
-        /// 大丈夫かを返す。
-        /// </summary>
-        /// <returns>大丈夫な場合 true</returns>
         public bool isOk()
         {
 
@@ -68,10 +94,6 @@ namespace WinFormsApp2
 
         }
 
-        /// <summary>
-        /// 気絶しているかを返す。
-        /// </summary>
-        /// <returns>気絶している場合 true</returns>
         public bool isCollapsed()
         {
 
@@ -81,7 +103,7 @@ namespace WinFormsApp2
 
     }
 
-    public class Fighter : Player
+    public class Fighter : PlayerModel
     {
 
         private int strengh;
