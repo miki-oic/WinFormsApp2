@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
-    public abstract class Field
+    public interface Field
+    {
+
+        string getName();
+
+    }
+
+    public abstract class FieldModel
     {
 
         private string name = "";
 
-        public Field()
+        public FieldModel()
         {
 
         }
@@ -24,7 +31,7 @@ namespace WinFormsApp2
 
         }
 
-        protected string setName(string name)
+        public string setName(string name)
         {
 
             return this.name = name;
@@ -33,7 +40,19 @@ namespace WinFormsApp2
 
     }
 
-    public class Castle : Field
+    public class Shop : FieldModel
+    {
+
+        public Shop(string name)
+        {
+
+            setName(name);
+
+        }
+
+    }
+
+    public class Castle : FieldModel
     {
 
         public Castle(string name)
@@ -45,7 +64,7 @@ namespace WinFormsApp2
 
     }
 
-    public class Colosseum : Field
+    public class Colosseum : FieldModel
     {
 
         public Colosseum(string name)
