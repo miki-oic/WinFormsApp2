@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
-    public class Person
+    public interface Person
+    {
+
+        string GetName();
+
+    }
+
+    public class PersonModel : Person
     {
 
         private string name;
 
-        public Person(string name)
+        public PersonModel(string name)
         {
 
             //Name = name;
@@ -22,7 +29,7 @@ namespace WinFormsApp2
         }
 
         //public string Name { get { return name; } set { name = value; } }
-        public string getName()
+        public string GetName()
         {
 
             return name;

@@ -9,7 +9,7 @@ namespace WinFormsApp2
         private FighterForm fighterForm;
         private WizardForm wizardForm;
         private Fighter fighter;
-        private Wizard wizard;
+        private WizardModel wizard;
         private Field field;
 
         public Form1()
@@ -18,12 +18,12 @@ namespace WinFormsApp2
             InitializeComponent();
 
             // 戦士の生成
-            fighter = new Fighter("アリオン", 8000, 2500);
+            fighter = new FighterModel("アリオン", 8000, 2500);
             fighterForm = new FighterForm(fighter);
             fighterForm.Show();
 
             // 魔法使いの生成
-            wizard = new Wizard("ワードナ", 4000, 5000);
+            wizard = new WizardModel("ワードナ", 4000, 5000);
             wizardForm = new WizardForm(wizard);
             wizardForm.Show();
 

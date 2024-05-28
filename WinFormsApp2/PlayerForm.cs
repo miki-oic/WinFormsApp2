@@ -37,7 +37,7 @@ namespace WinFormsApp2
         private void initialize()
         {
             // 名前
-            textBox1.Text = player.getName();
+            textBox1.Text = player.GetName();
             textBox1.Enabled = false; // 表示のみ
             // 職業
             comboBox1.Enabled = false; // 表示のみ
@@ -50,16 +50,16 @@ namespace WinFormsApp2
         {
 
             // ヒットポイント
-            textBox2.Text = player.getHitPoint().ToString();
+            textBox2.Text = player.GetHitPoint().ToString();
 
             // ステータス
-            if (player.isOk())
+            if (player.IsOk())
             {
 
                 label5.Text = "正常";
 
             }
-            else if (player.isCollapsed())
+            else if (player.IsCollapsed())
             {
 
                 label5.Text = "気絶";
