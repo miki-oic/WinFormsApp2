@@ -28,13 +28,13 @@ namespace WinFormsApp2
 
             this.player = player;
 
-            initialize();
+            Initialize();
 
-            update();
+            UpdateInformation();
 
         }
 
-        private void initialize()
+        private void Initialize()
         {
             // 名前
             textBox1.Text = player.GetName();
@@ -46,7 +46,10 @@ namespace WinFormsApp2
 
         }
 
-        public void update()
+        /// <summary>
+        /// 最新の情報に更新します。
+        /// </summary>
+        public void UpdateInformation()
         {
 
             // ヒットポイント
@@ -74,7 +77,7 @@ namespace WinFormsApp2
 
         }
 
-        protected void addClassName(string name)
+        protected void AddClassName(string name)
         {
 
             // 職業

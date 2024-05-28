@@ -10,28 +10,30 @@ namespace WinFormsApp2
     public interface Field
     {
 
-        string getName();
+        string GetName();
 
     }
 
-    public abstract class FieldModel
+    public abstract class FieldModel : Field
     {
 
-        private string name = "";
+        private string name;
 
         public FieldModel()
         {
 
+            name = "";
+
         }
 
-        public string getName()
+        public string GetName()
         {
 
             return name;
 
         }
 
-        public string setName(string name)
+        public string SetName(string name)
         {
 
             return this.name = name;
@@ -40,37 +42,37 @@ namespace WinFormsApp2
 
     }
 
-    public class Shop : FieldModel
+    public class ShopModel : FieldModel
     {
 
-        public Shop(string name)
+        public ShopModel(string name)
         {
 
-            setName(name);
+            SetName(name);
 
         }
 
     }
 
-    public class Castle : FieldModel
+    public class CastleModel : FieldModel
     {
 
-        public Castle(string name)
+        public CastleModel(string name)
         {
 
-            setName(name);
+            SetName(name);
 
         }
 
     }
 
-    public class Colosseum : FieldModel
+    public class ColosseumModel : FieldModel
     {
 
-        public Colosseum(string name)
+        public ColosseumModel(string name)
         {
 
-            setName(name);
+            SetName(name);
 
         }
 

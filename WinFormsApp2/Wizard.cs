@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
+    /// <summary>
+    /// 魔導士
+    /// </summary>
     public interface Wizard : Player
     {
 

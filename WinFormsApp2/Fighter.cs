@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
+    /// <summary>
+    /// 戦士
+    /// </summary>
     public interface Fighter : Player
     {
 

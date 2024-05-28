@@ -9,11 +9,11 @@ namespace WinFormsApp2
     public class WizardForm : PlayerForm
     {
 
-        public WizardForm(WizardModel wizard) : base(wizard)
+        public WizardForm(Wizard wizard) : base(wizard)
         {
 
             // 職業
-            addClassName("魔法使い");
+            AddClassName("魔導士");
 
         }
 

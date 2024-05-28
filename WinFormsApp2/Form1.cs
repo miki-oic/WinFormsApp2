@@ -7,9 +7,9 @@ namespace WinFormsApp2
     {
 
         private FighterForm fighterForm;
-        private WizardForm wizardForm;
         private Fighter fighter;
-        private WizardModel wizard;
+        private WizardForm wizardForm;
+        private Wizard wizard;
         private Field field;
 
         public Form1()
@@ -28,7 +28,7 @@ namespace WinFormsApp2
             wizardForm.Show();
 
             // ì¨ãZèÍÇÃê∂ê¨
-            field = new Colosseum("ì¨ãZèÍ");
+            field = new ColosseumModel("ì¨ãZèÍ");
 
         }
 
@@ -56,8 +56,8 @@ namespace WinFormsApp2
         private void button3_Click(object sender, EventArgs e)
         {
 
-            fighterForm.update();
-            wizardForm.update();
+            fighterForm.UpdateInformation();
+            wizardForm.UpdateInformation();
 
         }
 
