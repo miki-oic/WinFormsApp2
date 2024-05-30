@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace WinFormsApp2
 {
 
-    public partial class PlayerForm : Form
+    public partial class PlayerForm : Form, UpdatableForm
     {
 
         private Player player;
