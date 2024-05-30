@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
-    public interface UpdatableForm
+    public interface Observer
     {
 
         /// <summary>
-        /// 表示内容を更新します。
+        /// 情報を更新します。
         /// </summary>
         void update();
 
