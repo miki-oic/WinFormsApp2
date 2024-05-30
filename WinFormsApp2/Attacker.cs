@@ -8,17 +8,16 @@ namespace WinFormsApp2
 {
 
     /// <summary>
-    /// 攻撃
+    /// 攻撃者
     /// </summary>
-    public class Attack
+    public interface Attacker
     {
 
-        public Attack(Attacker attacker, Player target, Field field)
-        {
-
-            target.DamagedBy(attacker);
-
-        }
+        /// <summary>
+        /// 攻撃します。
+        /// </summary>
+        /// <returns>攻撃値</returns>
+        int Attack();
 
     }
 

@@ -13,7 +13,7 @@ namespace WinFormsApp2
         {
 
             // 職業
-            addClassName("魔法使い");
+            AddClassName("魔導士");
 
         }
 

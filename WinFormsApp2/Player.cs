@@ -8,42 +8,71 @@ using System.Xml.Linq;
 namespace WinFormsApp2
 {
 
-    public abstract class Player : Person, Attacker
+    public interface Player : Person, Attacker
+    {
+
+        /// <summary>
+        /// 耐久力を返します。
+        /// </summary>
+        /// <returns>耐久力</returns>
+        int GetHitPoint();
+
+        /// <summary>
+        /// 指定された攻撃者からのダメージを受けます。
+        /// </summary>
+        /// <param name="attacker">攻撃者</param>
+        /// <returns>このオブジェクト</ret urns>
+        Player DamagedBy(Attacker attacker);
+
+        /// <summary>
+        /// 大丈夫かどうかを返す。
+        /// </summary>
+        /// <returns>大丈夫な場合 true</returns>
+        bool IsOk();
+
+        /// <summary>
+        /// 気絶しているかどうかを返す。
+        /// </summary>
+        /// <returns>気絶している場合 true</returns>
+        bool IsCollapsed();
+
+    }
+
+    public abstract class PlayerModel : PersonModel, Player
     {
 
         private int hitPoint;
 
-        public Player() : base("ゲストプレイヤー")
+        public PlayerModel() : base("ゲストプレイヤー")
         {
 
-            hitPoint = 100;
+            hitPoint = 1000;
 
         }
 
-        public Player(string name, int hitPoint) : base(name)
+        public PlayerModel(string name, int hitPoint) : base(name)
         {
 
             this.hitPoint = hitPoint;
 
         }
 
-        public int getHitPoint()
+        public int GetHitPoint()
         {
 
             return hitPoint;
 
         }
 
-        public abstract int attack();
+        public abstract int Attack();
 
-        public Player damagedBy(Attacker attacker)
+        public Player DamagedBy(Attacker attacker)
         {
 
-            int attackPoint = attacker.attack();
-            if (attackPoint < hitPoint)
+            if (attacker.Attack() < hitPoint)
             {
 
-                hitPoint -= attackPoint;
+                hitPoint -= attacker.Attack();
 
             }
             else
@@ -57,109 +86,17 @@ namespace WinFormsApp2
 
         }
 
-        /// <summary>
-        /// 大丈夫かを返す。
-        /// </summary>
-        /// <returns>大丈夫な場合 true</returns>
-        public bool isOk()
+        public bool IsOk()
         {
 
             return hitPoint > 0;
 
         }
 
-        /// <summary>
-        /// 気絶しているかを返す。
-        /// </summary>
-        /// <returns>気絶している場合 true</returns>
-        public bool isCollapsed()
+        public bool IsCollapsed()
         {
 
-            return !isOk();
-
-        }
-
-    }
-
-    public class Fighter : Player
-    {
-
-        private int strengh;
-
-        public Fighter()
-        {
-
-            strengh = 10;
-
-        }
-
-        public Fighter(string name, int hitPoint, int strengh) : base(name, hitPoint)
-        {
-
-            this.strengh = strengh;
-
-        }
-
-        public int getStrengh()
-        {
-
-            return strengh;
-
-        }
-
-        public override int attack()
-        {
-
-            return slash();
-
-        }
-
-        public int slash()
-        {
-
-            return strengh;
-
-        }
-
-    }
-
-    public class Wizard : Player
-    {
-
-        private int magicPoint;
-
-        public Wizard()
-        {
-
-            magicPoint = 10;
-
-        }
-
-        public Wizard(string name, int hitPoint, int magicPoint) : base(name, hitPoint)
-        {
-
-            this.magicPoint = magicPoint;
-
-        }
-
-        public int getMagicPoint()
-        {
-
-            return magicPoint;
-
-        }
-
-        public override int attack()
-        {
-
-            return spell();
-
-        }
-
-        public int spell()
-        {
-
-            return magicPoint;
+            return !IsOk();
 
         }
 

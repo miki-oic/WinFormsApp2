@@ -28,16 +28,16 @@ namespace WinFormsApp2
 
             this.player = player;
 
-            initialize();
+            Initialize();
 
-            update();
+            UpdateInformation();
 
         }
 
-        private void initialize()
+        private void Initialize()
         {
             // 名前
-            textBox1.Text = player.getName();
+            textBox1.Text = player.GetName();
             textBox1.Enabled = false; // 表示のみ
             // 職業
             comboBox1.Enabled = false; // 表示のみ
@@ -46,20 +46,23 @@ namespace WinFormsApp2
 
         }
 
-        public void update()
+        /// <summary>
+        /// 最新の情報に更新します。
+        /// </summary>
+        public void UpdateInformation()
         {
 
             // ヒットポイント
-            textBox2.Text = player.getHitPoint().ToString();
+            textBox2.Text = player.GetHitPoint().ToString();
 
             // ステータス
-            if (player.isOk())
+            if (player.IsOk())
             {
 
                 label5.Text = "正常";
 
             }
-            else if (player.isCollapsed())
+            else if (player.IsCollapsed())
             {
 
                 label5.Text = "気絶";
@@ -74,7 +77,7 @@ namespace WinFormsApp2
 
         }
 
-        protected void addClassName(string name)
+        protected void AddClassName(string name)
         {
 
             // 職業
