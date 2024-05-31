@@ -36,10 +36,13 @@ namespace WinFormsApp2
         /// <returns>気絶している場合 true</returns>
         bool IsCollapsed();
 
+        /// <summary>
+        /// オブザーバーを追加します。
+        /// </summary>
+        /// <param name="observer"></param>
+        /// <returns>オブザーバー</returns>
+        Player AddObserver(Observer observer);
 
-        Player AddObserber(Observer observer);
-
-       
     }
 
     public abstract class PlayerModel : PersonModel, Player
@@ -107,12 +110,16 @@ namespace WinFormsApp2
 
         }
 
-        public Player AddObserber(Observer observer)
+        public Player AddObserver(Observer observer)
         {
+
             observers.Add(observer);
+
             return this;
+
         }
-        public void notify()
+
+        private void notify()
         {
 
             observers.ForEach(observer =>

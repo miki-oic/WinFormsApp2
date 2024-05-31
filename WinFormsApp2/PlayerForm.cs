@@ -43,6 +43,8 @@ namespace WinFormsApp2
             comboBox1.Enabled = false; // 表示のみ
             // ヒットポイント
             textBox2.Enabled = false; // 表示のみ
+            // オブザーバーの追加
+            player.AddObserver(this);
 
             player.AddObserber(this);
         }
@@ -88,6 +90,14 @@ namespace WinFormsApp2
         public void update()
         {
             UpdateInformation();
+        }
+
+        public void update()
+        {
+
+            // 情報を更新
+            UpdateInformation();
+
         }
 
     }
