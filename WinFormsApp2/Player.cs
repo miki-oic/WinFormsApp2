@@ -36,12 +36,17 @@ namespace WinFormsApp2
         /// <returns>気絶している場合 true</returns>
         bool IsCollapsed();
 
+
+        Player AddObserber(Observer observer);
+
+       
     }
 
     public abstract class PlayerModel : PersonModel, Player
     {
 
         private int hitPoint;
+        private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base("ゲストプレイヤー")
         {
@@ -82,6 +87,8 @@ namespace WinFormsApp2
 
             }
 
+            notify();
+
             return this;
 
         }
@@ -97,6 +104,23 @@ namespace WinFormsApp2
         {
 
             return !IsOk();
+
+        }
+
+        public Player AddObserber(Observer observer)
+        {
+            observers.Add(observer);
+            return this;
+        }
+        public void notify()
+        {
+
+            observers.ForEach(observer =>
+            {
+
+                observer.update();
+
+            });
 
         }
 
