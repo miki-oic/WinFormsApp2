@@ -37,12 +37,16 @@ namespace WinFormsApp2
 
             createAttack(fighter, wizard);
 
+//            wizardForm.UpdateInformation();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
             createAttack(wizard, fighter);
+
+//            fighterForm.UpdateInformation();
 
         }
 

@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace WinFormsApp2
 {
 
-    public partial class PlayerForm : Form
+    public partial class PlayerForm : Form, Observer
     {
 
         private Player player;
@@ -43,6 +43,8 @@ namespace WinFormsApp2
             comboBox1.Enabled = false; // 表示のみ
             // ヒットポイント
             textBox2.Enabled = false; // 表示のみ
+            // オブザーバーの追加
+            player.AddObserver(this);
 
         }
 
@@ -82,6 +84,14 @@ namespace WinFormsApp2
 
             // 職業
             comboBox1.Text = name;
+
+        }
+
+        public void update()
+        {
+
+            // 情報を更新
+            UpdateInformation();
 
         }
 
