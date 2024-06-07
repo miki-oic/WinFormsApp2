@@ -17,16 +17,29 @@ namespace WinFormsApp2
     public partial class PlayerForm : Form, Observer
     {
 
+        private PlayerStatusLabel playerStatusLabel;
         private Player player;
+        private List<Observer> observers = new List<Observer>();
 
         public PlayerForm(Player player)
         {
 
             //Debug.Assert(player != null);
+            this.player = player;
+            //Debug.Assert(this.player != null);
+
+            playerStatusLabel = new PlayerStatusLabel(player);
+            playerStatusLabel.AutoSize = true;
+            playerStatusLabel.Location = new Point(237, 213);
+            playerStatusLabel.Name = "label5";
+            playerStatusLabel.Size = new Size(125, 25);
+            playerStatusLabel.TabIndex = 7;
+            playerStatusLabel.Text = "* 状態の表示 *";
+            Controls.Add(playerStatusLabel);
 
             InitializeComponent();
 
-            this.player = player;
+            observers.Add(playerStatusLabel);
 
             Initialize();
 
@@ -54,10 +67,18 @@ namespace WinFormsApp2
         public void UpdateInformation()
         {
 
+            observers.ForEach(observer =>
+            {
+
+                observer.update();
+
+            });
+
             // ヒットポイント
             textBox2.Text = player.GetHitPoint().ToString();
 
             // ステータス
+            /*
             if (player.IsOk())
             {
 
@@ -76,6 +97,7 @@ namespace WinFormsApp2
                 label5.Text = "？？？";
 
             }
+            */
 
         }
 
