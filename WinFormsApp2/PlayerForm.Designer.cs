@@ -35,7 +35,7 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             textBox2 = new TextBox();
-            label5 = new Label();
+            //label5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -98,19 +98,21 @@
             // 
             // label5
             // 
+            /*
             label5.AutoSize = true;
             label5.Location = new Point(237, 213);
             label5.Name = "label5";
             label5.Size = new Size(125, 25);
             label5.TabIndex = 7;
             label5.Text = "* 状態の表示 *";
+            */
             // 
             // PlayerForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label5);
+            //Controls.Add(label5);
             Controls.Add(textBox2);
             Controls.Add(comboBox1);
             Controls.Add(textBox1);
@@ -133,6 +135,6 @@
         private TextBox textBox1;
         private ComboBox comboBox1;
         private TextBox textBox2;
-        private Label label5;
+        //private Label label5;
     }
 }

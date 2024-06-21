@@ -17,7 +17,7 @@ namespace WinFormsApp2
         {
 
             target.DamagedBy(attacker);
-
+            
         }
 
     }
