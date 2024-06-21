@@ -8,7 +8,7 @@ namespace WinFormsApp2
 {
     public class Party
     {
-        private int Id;
-        private List<Player> Member = new List<Player>();
+        private int id;
+        private List<Player> member = new List<Player>();
     }
 }
