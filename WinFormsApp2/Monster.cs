@@ -8,7 +8,7 @@ namespace WinFormsApp2
 {
     public class Monster
     {
-       private int HP;
+       private int HItP;
        private int AC;
        private int EXP;
        private char Race;
