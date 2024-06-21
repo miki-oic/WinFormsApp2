@@ -33,7 +33,7 @@ namespace WinFormsApp2
 
         }
 
-        public WizardModel(string name, int hitPoint, int magicPoint) : base(name, hitPoint)
+        public WizardModel(string name, int hitPoint, int magicPoint,string job,int aromorClass) : base(name, hitPoint,job,aromorClass)
         {
 
             this.magicPoint = magicPoint;

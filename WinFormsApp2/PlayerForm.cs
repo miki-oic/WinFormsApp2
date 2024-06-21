@@ -46,7 +46,6 @@ namespace WinFormsApp2
             // オブザーバーの追加
             player.AddObserver(this);
 
-            player.AddObserber(this);
         }
 
         /// <summary>
@@ -90,14 +89,6 @@ namespace WinFormsApp2
         public void update()
         {
             UpdateInformation();
-        }
-
-        public void update()
-        {
-
-            // 情報を更新
-            UpdateInformation();
-
         }
 
     }
