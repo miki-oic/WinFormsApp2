@@ -6,34 +6,21 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Monster : Player
+    public class Monster:Player
     {
-        private int HItP;
-        private int AC;
-        private int EXP;
-        private char Race;
+        private int hitPoint;
+        private int armorClass;
+        private int experiencePoint;
+        private char type;
 
-        public int GetAC()
-        {
-            return AC;
-        }
-        public int GetEXP()
-        {
-            return EXP;
-        }
-        public char GetRace()
-        {
-            return Race;
-        }
-
-        public int GetHitPoint()
-        {
-            return HItP;
-        }
-
-        public string GetJob()
+        public Player AddObserver(Observer observer)
         {
             throw new NotImplementedException();
+        }
+
+        public int Attack()
+        {
+            return 0;
         }
 
         public Player DamagedBy(Attacker attacker)
@@ -41,7 +28,12 @@ namespace WinFormsApp2
             throw new NotImplementedException();
         }
 
-        public bool IsOk()
+        public int GetHitPoint()
+        {
+            return hitPoint;
+        }
+
+        public string GetName()
         {
             throw new NotImplementedException();
         }
@@ -51,17 +43,7 @@ namespace WinFormsApp2
             throw new NotImplementedException();
         }
 
-        public Player AddObserver(Observer observer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetName()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Attack()
+        public bool IsOk()
         {
             throw new NotImplementedException();
         }

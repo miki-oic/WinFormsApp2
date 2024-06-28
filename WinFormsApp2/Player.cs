@@ -60,6 +60,9 @@ namespace WinFormsApp2
 
     public abstract class PlayerModel : PersonModel, Player
     {
+        private int level;
+        private int hitPoint;
+        private int armorClass;
 
         private int hitPoint;
         private string job;
