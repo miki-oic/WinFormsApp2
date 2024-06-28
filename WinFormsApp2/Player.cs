@@ -47,8 +47,10 @@ namespace WinFormsApp2
 
     public abstract class PlayerModel : PersonModel, Player
     {
-
+        private int level;
         private int hitPoint;
+        private int armorClass;
+
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base("ゲストプレイヤー")
