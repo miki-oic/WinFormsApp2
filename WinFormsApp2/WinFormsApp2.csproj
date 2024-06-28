@@ -9,8 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Heal.cs" />
-    <Compile Remove="Healer.cs" />
+    <Folder Include="MockForm\" />
   </ItemGroup>
 
 </Project>
