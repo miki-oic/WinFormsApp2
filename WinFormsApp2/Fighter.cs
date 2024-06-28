@@ -21,11 +21,11 @@ namespace WinFormsApp2
 
     }
 
-    public class FighterMoc : PlayerModel, Fighter
+    public class FighterMock : PlayerModel, Fighter
     {
         public override int Attack()
         {
-            return 100;
+            return Slash();
         }
 
         public int Slash()

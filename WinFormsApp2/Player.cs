@@ -27,7 +27,7 @@ namespace WinFormsApp2
         ///守備力を返します
         ///</summary>
         ///<returns>守備力</returns>
-        int GetAromorClass();
+        int GetAC();
 
         /// <summary>
         /// 指定された攻撃者からのダメージを受けます。
@@ -155,7 +155,7 @@ namespace WinFormsApp2
             return job;
         }
 
-        public int GetAromorClass()
+        public int GetAC()
         {
             return armorClass;
         }

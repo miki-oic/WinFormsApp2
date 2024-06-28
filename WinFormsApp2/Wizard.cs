@@ -21,6 +21,18 @@ namespace WinFormsApp2
 
     }
 
+    public class WizerdMock : PlayerModel, Wizard
+    {
+        public override int Attack()
+        {
+            return 100;
+        }
+
+        public int Spell()
+        {
+            return 100;
+        }
+    }
     public class WizardModel : PlayerModel, Wizard
     {
 
