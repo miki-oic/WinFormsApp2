@@ -6,7 +6,7 @@ namespace OOTestProject
     public class AttackTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod()
         {
 
             Fighter fighter = new FighterModel();
