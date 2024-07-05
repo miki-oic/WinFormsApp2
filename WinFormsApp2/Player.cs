@@ -168,6 +168,95 @@ namespace WinFormsApp2
         {
             return level;
         }
+
+    }
+
+    public class NullPlayer : Player
+    {
+
+        private static Player player = new NullPlayer();
+
+        private NullPlayer()
+        {
+
+        }
+
+        public static Player GetInstance() {
+            
+            return player;
+
+        }
+
+        public Player AddObserver(Observer observer)
+        {
+
+            return this;
+
+        }
+
+        public int Attack()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public Player DamagedBy(Attacker attacker)
+        {
+
+            return this;
+
+        }
+
+        public int GetArmorClass()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public int GetHitPoint()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public string GetJob()
+        {
+
+            return "";
+
+        }
+
+        public int GetLevel()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public string GetName()
+        {
+
+            return "";
+
+        }
+
+        public bool IsCollapsed()
+        {
+
+            return false;
+
+        }
+
+        public bool IsOk()
+        {
+
+            return false;
+
+        }
+
     }
 
 }
