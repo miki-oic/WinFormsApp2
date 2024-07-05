@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Monster:Player
+    public class Monster : Player
     {
         private int hitPoint;
         private int armorClass;
         private int experiencePoint;
         private char type;
 
-        //TODO:monster変更
+        public int GetExperiencePoint()
+        {
+            return experiencePoint;
+        }
+
         public Player AddObserver(Observer observer)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public int Attack()
@@ -26,7 +30,13 @@ namespace WinFormsApp2
 
         public Player DamagedBy(Attacker attacker)
         {
-            throw new NotImplementedException();
+            hitPoint -= attacker.Attack() + armorClass;
+            return this;
+        }
+
+        public int GetArmorClass()
+        {
+           return armorClass;
         }
 
         public int GetHitPoint()
@@ -34,17 +44,27 @@ namespace WinFormsApp2
             return hitPoint;
         }
 
-        public string GetName()
+        public string GetJob()
         {
             throw new NotImplementedException();
+        }
+
+        public string GetName()
+        {
+            return type.ToString();
         }
 
         public bool IsCollapsed()
         {
-            throw new NotImplementedException();
+            return !IsOk();
         }
 
         public bool IsOk()
+        {
+            return hitPoint > 0;
+        }
+
+        public int GetLevel()
         {
             throw new NotImplementedException();
         }

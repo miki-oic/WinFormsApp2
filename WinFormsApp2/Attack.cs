@@ -15,7 +15,7 @@ namespace WinFormsApp2
 
         public Attack(Attacker attacker, Player target, Field field)
         {
-
+            
             target.DamagedBy(attacker);
             
         }

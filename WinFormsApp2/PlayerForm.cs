@@ -108,13 +108,9 @@ namespace WinFormsApp2
             comboBox1.Text = name;
 
         }
-
         public void update()
         {
-
-            // 情報を更新
             UpdateInformation();
-
         }
 
     }

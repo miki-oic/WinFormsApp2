@@ -10,7 +10,7 @@ namespace WinFormsApp2
     public interface RecordableObject
     {
 
-        void save();
+        void Save();
 
     }
 

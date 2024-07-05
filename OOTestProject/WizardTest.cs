@@ -15,6 +15,8 @@ namespace OOTestProject
         {
 
             Wizard wizard = new WizardModel();
+
+            Assert.AreEqual("ゲストプレイヤー", wizard.GetName());
         }
 
         [TestMethod]

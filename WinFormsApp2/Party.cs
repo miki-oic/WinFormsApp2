@@ -11,10 +11,10 @@ namespace WinFormsApp2
         private int id;
         private List<Player> member = new List<Player>();
 
-        bool InButtle()
+        public int GetId()
         {
-            //TODO:変更
-            return false;
+            return id;
         }
     }
+    
 }

@@ -22,6 +22,23 @@ namespace WinFormsApp2
 
     }
 
+    public class WizerdMock : PlayerModel, Wizard
+    {
+        public override int Attack()
+        {
+            return 100;
+        }
+
+        public int GetMagicPoint()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Spell()
+        {
+            return 100;
+        }
+    }
     public class WizardModel : PlayerModel, Wizard
     {
 
@@ -34,9 +51,9 @@ namespace WinFormsApp2
 
         }
 
-        public WizardModel(string name, int hitPoint, int magicPoint) : base(name, hitPoint)
+        public WizardModel(string name, int hitPoint, int magicPoint,string job,int aromorClass) : base(name, hitPoint,job,aromorClass)
         {
-
+            
             this.magicPoint = magicPoint;
 
         }
