@@ -19,6 +19,8 @@ namespace WinFormsApp2
         /// <returns>効果の値</returns>
         int Slash();
         int GetStrengh();
+
+        string GetJobName();
     }
 
     public class FighterMock : PlayerModel, Fighter
@@ -36,6 +38,10 @@ namespace WinFormsApp2
         public int Slash()
         {
             return 100;
+        }
+        public string GetJobName()
+        {
+            return "戦士";
         }
     }
 

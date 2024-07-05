@@ -20,6 +20,8 @@ namespace WinFormsApp2
         /// <returns>効果の値</returns>
         int Spell();
 
+        string GetJobName();
+
     }
 
     public class WizerdMock : PlayerModel, Wizard
@@ -37,6 +39,10 @@ namespace WinFormsApp2
         public int Spell()
         {
             return 100;
+        }
+        public string GetJobName()
+        {
+            return "魔術師";
         }
     }
     public class WizardModel : PlayerModel, Wizard

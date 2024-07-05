@@ -15,7 +15,7 @@ namespace WinFormsApp2
         {
 
             // 職業
-            AddClassName(fighter.GetJob());
+            AddClassName(fighter.GetJobName());
         }
 
     }
