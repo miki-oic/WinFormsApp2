@@ -15,7 +15,7 @@ namespace WinFormsApp2
         private int faithPoint;
         public PriestModel()
         {
-            faithPoint = 10;
+            faithPoint = 100;
         }
 
         public PriestModel(string name, int hitPoint, int faithPoint)

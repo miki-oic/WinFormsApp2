@@ -13,6 +13,7 @@ namespace WinFormsApp2
         private int experiencePoint;
         private char type;
 
+        //TODO:monster変更
         public Player AddObserver(Observer observer)
         {
             throw new NotImplementedException();

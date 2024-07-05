@@ -18,5 +18,27 @@ namespace OOTestProject
             Assert.AreEqual(900, wizard.GetHitPoint());
 
         }
+
+        [TestMethod]
+        public void  FighterTest()
+        {
+            Fighter fighter = new FighterModel();
+            Assert.AreEqual(100, fighter.Attack());
+        }
+
+        [TestMethod]
+        public void WizardTest()
+        {
+            Wizard wizard = new WizardModel();
+            Assert.AreEqual(100, wizard.Attack());
+        }
+
+        [TestMethod]
+        public void PriestTest()
+        {
+            Priest priest = new PriestModel();
+            Assert.AreEqual(100, priest.Attack());
+        }
+
     }
 }
