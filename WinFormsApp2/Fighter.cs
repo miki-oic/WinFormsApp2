@@ -18,7 +18,20 @@ namespace WinFormsApp2
         /// </summary>
         /// <returns>効果の値</returns>
         int Slash();
+        int GetStrengh();
+    }
 
+    public class FighterMock : PlayerModel, Fighter
+    {
+        public override int Attack()
+        {
+            return Slash();
+        }
+
+        public int Slash()
+        {
+            return 100;
+        }
     }
 
     public class FighterModel : PlayerModel, Fighter
@@ -33,7 +46,7 @@ namespace WinFormsApp2
 
         }
 
-        public FighterModel(string name, int hitPoint, int strengh) : base(name, hitPoint)
+        public FighterModel(string name, int hitPoint, int strengh, string job,int armorClass) : base(name, hitPoint,job,armorClass)
         {
 
             this.strengh = strengh;
