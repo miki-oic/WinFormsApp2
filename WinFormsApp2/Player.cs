@@ -17,12 +17,7 @@ namespace WinFormsApp2
         /// <returns>耐久力</returns>
         int GetHitPoint();
 
-        /// <summary>
-        /// 職業を返します
-        /// </summary>
-        /// <returns>職業名</returns>
-        string GetJob();
-
+       
         ///<summary>
         ///守備力を返します
         ///</summary>
@@ -67,23 +62,20 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
-        private string job;
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base("ゲストプレイヤー")
         {
 
             hitPoint = 1000;
-            job = "";
             armorClass = 10;
 
         }
 
-        public PlayerModel(string name, int hitPoint,string job,int armorClass) : base(name)
+        public PlayerModel(string name, int hitPoint,int armorClass) : base(name)
         {
 
             this.hitPoint = hitPoint;
-            this.job = job;
             this.armorClass = armorClass;
 
         }
@@ -152,11 +144,6 @@ namespace WinFormsApp2
 
             });
 
-        }
-
-        public string GetJob()
-        {
-            return job;
         }
 
         public int GetArmorClass()
