@@ -17,6 +17,13 @@ namespace WinFormsApp2
         /// <returns>耐久力</returns>
         int GetHitPoint();
 
+       
+        ///<summary>
+        ///守備力を返します
+        ///</summary>
+        ///<returns>守備力</returns>
+        int GetArmorClass();
+
         /// <summary>
         /// 指定された攻撃者からのダメージを受けます。
         /// </summary>
@@ -43,6 +50,11 @@ namespace WinFormsApp2
         /// <returns>オブザーバー</returns>
         Player AddObserver(Observer observer);
 
+        ///<summary>
+        ///レベルを返します
+        ///</summary>
+        ///<returns>レベル</returns>
+        int GetLevel();
     }
 
     public abstract class PlayerModel : PersonModel, Player
@@ -50,20 +62,21 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
-
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base("ゲストプレイヤー")
         {
 
             hitPoint = 1000;
+            armorClass = 10;
 
         }
 
-        public PlayerModel(string name, int hitPoint) : base(name)
+        public PlayerModel(string name, int hitPoint,int armorClass) : base(name)
         {
 
             this.hitPoint = hitPoint;
+            this.armorClass = armorClass;
 
         }
 
@@ -130,6 +143,104 @@ namespace WinFormsApp2
                 observer.update();
 
             });
+
+        }
+
+        public int GetArmorClass()
+        {
+            return armorClass;
+        }
+
+        public int GetLevel()
+        {
+            return level;
+        }
+
+    }
+
+    public class NullPlayer : Player
+    {
+
+        private static Player player = new NullPlayer();
+
+        private NullPlayer()
+        {
+
+        }
+
+        public static Player GetInstance() {
+            
+            return player;
+
+        }
+
+        public Player AddObserver(Observer observer)
+        {
+
+            return this;
+
+        }
+
+        public int Attack()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public Player DamagedBy(Attacker attacker)
+        {
+
+            return this;
+
+        }
+
+        public int GetArmorClass()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public int GetHitPoint()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public string GetJob()
+        {
+
+            return "";
+
+        }
+
+        public int GetLevel()
+        {
+
+            return int.MinValue;
+
+        }
+
+        public string GetName()
+        {
+
+            return "";
+
+        }
+
+        public bool IsCollapsed()
+        {
+
+            return false;
+
+        }
+
+        public bool IsOk()
+        {
+
+            return false;
 
         }
 

@@ -10,5 +10,11 @@ namespace WinFormsApp2
     {
         private int id;
         private List<Player> member = new List<Player>();
+
+        public int GetId()
+        {
+            return id;
+        }
     }
+    
 }

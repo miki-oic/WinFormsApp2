@@ -12,6 +12,7 @@ namespace WinFormsApp2
     /// </summary>
     public interface Wizard : Player
     {
+        int GetMagicPoint();
 
         /// <summary>
         /// 呪文を唱えます。
@@ -19,8 +20,31 @@ namespace WinFormsApp2
         /// <returns>効果の値</returns>
         int Spell();
 
+        string GetJobName();
+
     }
 
+    public class WizerdMock : PlayerModel, Wizard
+    {
+        public override int Attack()
+        {
+            return 100;
+        }
+
+        public int GetMagicPoint()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Spell()
+        {
+            return 100;
+        }
+        public string GetJobName()
+        {
+            return "魔術師";
+        }
+    }
     public class WizardModel : PlayerModel, Wizard
     {
 
@@ -33,11 +57,25 @@ namespace WinFormsApp2
 
         }
 
-        public WizardModel(string name, int hitPoint, int magicPoint) : base(name, hitPoint)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">名前</param>
+        /// <param name="hitPoint">体力</param>
+        /// <param name="magicPoint">魔法力</param>
+        /// <param name="job">職業</param>
+        /// <param name="aromorClass">防御力</param>
+        
+        public WizardModel(string name, int hitPoint, int magicPoint,int aromorClass) : base(name, hitPoint,aromorClass)
         {
-
+            
             this.magicPoint = magicPoint;
 
+        }
+
+        public string GetJobName()
+        {
+            return "魔術師";
         }
 
         /// <summary>
