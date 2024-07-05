@@ -19,6 +19,13 @@ namespace WinFormsApp2
             faithPoint = 100;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">名前</param>
+        /// <param name="hitPoint">体力</param>
+        /// <param name="faithPoint">信仰力</param>
+    
         public PriestModel(string name, int hitPoint, int faithPoint)
         {
             this.faithPoint = faithPoint;
