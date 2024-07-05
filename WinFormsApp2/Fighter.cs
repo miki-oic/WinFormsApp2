@@ -60,7 +60,6 @@ namespace WinFormsApp2
         /// <param name="job">職業</param>
         /// <param name="armorClass">防御力</param>
        
-        public FighterModel(string name, int hitPoint, int strengh, string job,int armorClass) : base(name, hitPoint,job,armorClass)
         public FighterModel(string name, int hitPoint, int strengh,int armorClass) : base(name, hitPoint,armorClass)
         {
 
