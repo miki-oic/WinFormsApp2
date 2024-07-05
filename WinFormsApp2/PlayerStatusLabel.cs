@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,28 @@ namespace WinFormsApp2
 
         private Player player;
 
+        public PlayerStatusLabel(): this(NullPlayer.GetInstance())
+        {
+
+        }
+
         public PlayerStatusLabel(Player player)
         {
 
-            this.player = player;
+            AddPlayer(player);
 
             update();
+
+        }
+
+        public void AddPlayer(Player player)
+        {
+
+            Debug.Assert(player != null);
+
+            this.player = player;
+
+            Debug.Assert(this.player != null);
 
         }
 
