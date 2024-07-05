@@ -51,11 +51,25 @@ namespace WinFormsApp2
 
         }
 
-        public WizardModel(string name, int hitPoint, int magicPoint,string job,int aromorClass) : base(name, hitPoint,job,aromorClass)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name">名前</param>
+        /// <param name="hitPoint">体力</param>
+        /// <param name="magicPoint">魔法力</param>
+        /// <param name="job">職業</param>
+        /// <param name="aromorClass">防御力</param>
+        
+        public WizardModel(string name, int hitPoint, int magicPoint,int aromorClass) : base(name, hitPoint,aromorClass)
         {
             
             this.magicPoint = magicPoint;
 
+        }
+
+        public string GetJobName()
+        {
+            return "魔術師";
         }
 
         /// <summary>

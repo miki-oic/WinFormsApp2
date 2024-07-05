@@ -38,5 +38,18 @@ namespace OOTestProject
             Priest priest = new PriestModel("Priest", 3000, 100);
             Assert.AreEqual(300, priest.GetFaithPoint());
         }
+
+        public void GetNameTest05()
+        {
+            Priest priest = new PriestModel("Priest", 3000, 100);
+            Assert.AreEqual(10, priest.GetLevel());
+        }
+
+        [TestMethod]
+        public void GetNameTest06()
+        {
+            Priest priest = new PriestModel("Priest", 3000, 100);
+            Assert.AreEqual(10, priest.GetArmorClass());
+        }
     }
 }

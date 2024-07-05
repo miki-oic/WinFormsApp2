@@ -38,5 +38,15 @@ namespace OOTestProject
             Assert.AreEqual(300, fighter.GetStrengh());
         }
 
+        public void GetNameTest05()
+        {
+            Fighter fighter = new FighterModel("Fighter", 2000, 300);
+            Assert.AreEqual(10, fighter.GetLevel());
+        }
+        public void GetNameTest06()
+        {
+            Fighter fighter = new FighterModel("Fighter", 2000, 300);
+            Assert.AreEqual(10, fighter.GetArmorClass());
+        }
     }
 }
