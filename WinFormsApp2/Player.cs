@@ -27,7 +27,7 @@ namespace WinFormsApp2
         ///守備力を返します
         ///</summary>
         ///<returns>守備力</returns>
-        int GetAC();
+        int GetArmorClass();
 
         /// <summary>
         /// 指定された攻撃者からのダメージを受けます。
@@ -55,7 +55,11 @@ namespace WinFormsApp2
         /// <returns>オブザーバー</returns>
         Player AddObserver(Observer observer);
 
-       
+        ///<summary>
+        ///レベルを返します
+        ///</summary>
+        ///<returns>レベル</returns>
+        int GetLevel();
     }
 
     public abstract class PlayerModel : PersonModel, Player
@@ -63,10 +67,7 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
-
-        private int hitPoint;
         private string job;
-        private int armorClass;
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base("ゲストプレイヤー")
@@ -158,9 +159,14 @@ namespace WinFormsApp2
             return job;
         }
 
-        public int GetAC()
+        public int GetArmorClass()
         {
             return armorClass;
+        }
+
+        public int GetLevel()
+        {
+            return level;
         }
     }
 
