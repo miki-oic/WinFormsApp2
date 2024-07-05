@@ -18,7 +18,7 @@ namespace WinFormsApp2
         /// </summary>
         /// <returns>効果の値</returns>
         int Slash();
-
+        int GetStrengh();
     }
 
     public class FighterModel : PlayerModel, Fighter

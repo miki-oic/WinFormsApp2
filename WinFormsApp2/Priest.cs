@@ -8,8 +8,9 @@ namespace WinFormsApp2
 {
     public interface Priest:Player
     {
-        int Faith();
+        int GetFaithPoint();
     }
+
     public class PriestModel:PlayerModel,Priest
     {
         private int faithPoint;
