@@ -15,7 +15,6 @@ namespace OOTestProject
         {
 
             Wizard wizard = new WizardModel();
-
             Assert.AreEqual("", wizard.GetName());
         }
 
@@ -25,7 +24,6 @@ namespace OOTestProject
 
             // string name, int hitPoint, int magicPoint
             Wizard wizard = new WizardModel("Wizard", 2000, 150);
-
             Assert.AreEqual("Assert", wizard.GetName());
         }
 
@@ -35,7 +33,6 @@ namespace OOTestProject
 
             // string name, int hitPoint, int magicPoint
             Wizard wizard = new WizardModel("Wizard", 2000, 150);
-
             Assert.AreEqual(200, wizard.GetHitPoint());
         }
 
@@ -45,7 +42,6 @@ namespace OOTestProject
 
             // string name, int hitPoint, int magicPoint
             Wizard wizard = new WizardModel("Wizard", 2000, 150);
-
             Assert.AreEqual(150, wizard.GetMagicPoint());
         }
     }
