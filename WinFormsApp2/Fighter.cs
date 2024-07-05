@@ -51,11 +51,15 @@ namespace WinFormsApp2
 
         }
 
-        public FighterModel(string name, int hitPoint, int strengh, string job,int armorClass) : base(name, hitPoint,job,armorClass)
+        public FighterModel(string name, int hitPoint, int strengh,int armorClass) : base(name, hitPoint,armorClass)
         {
 
             this.strengh = strengh;
 
+        }
+        public string GetJobName()
+        {
+            return "戦士";
         }
 
         /// <summary>
