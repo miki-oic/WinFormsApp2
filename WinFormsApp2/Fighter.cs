@@ -28,6 +28,11 @@ namespace WinFormsApp2
             return Slash();
         }
 
+        public int GetStrengh()
+        {
+            return 100;
+        }
+
         public int Slash()
         {
             return 100;
