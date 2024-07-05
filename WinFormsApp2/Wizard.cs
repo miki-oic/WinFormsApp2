@@ -12,6 +12,7 @@ namespace WinFormsApp2
     /// </summary>
     public interface Wizard : Player
     {
+        int GetMagicPoint();
 
         /// <summary>
         /// 呪文を唱えます。
