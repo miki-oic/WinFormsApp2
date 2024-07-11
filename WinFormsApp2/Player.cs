@@ -174,6 +174,13 @@ namespace WinFormsApp2
 
         }
 
+        public int GetId()
+        {
+
+            return 0;
+
+        }
+
         public Player AddObserver(Observer observer)
         {
 
