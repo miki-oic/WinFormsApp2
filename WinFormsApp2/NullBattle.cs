@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
 
-    public class NullBattle : NullObject
+    public class NullBattle : Battle, NullObject
     {
 
         private static NullBattle nullBattle = new NullBattle();
