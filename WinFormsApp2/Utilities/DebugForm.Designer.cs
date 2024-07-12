@@ -64,6 +64,7 @@
             playerLabel1.Size = new Size(45, 15);
             playerLabel1.TabIndex = 2;
             playerLabel1.Text = "Player1";
+            playerLabel1.Click += playerLabel1_Click;
             // 
             // playerLabel2
             // 
@@ -73,11 +74,13 @@
             playerLabel2.Size = new Size(45, 15);
             playerLabel2.TabIndex = 3;
             playerLabel2.Text = "Player2";
+            playerLabel2.Click += playerLabel2_Click;
             // 
             // HPLabel1
             // 
             HPLabel1.AutoSize = true;
-            HPLabel1.Location = new Point(73, 9);
+            HPLabel1.Location = new Point(100, 9);
+            HPLabel1.Margin = new Padding(3, 0, 10, 0);
             HPLabel1.Name = "HPLabel1";
             HPLabel1.Size = new Size(23, 15);
             HPLabel1.TabIndex = 4;
@@ -86,7 +89,7 @@
             // HPLabel2
             // 
             HPLabel2.AutoSize = true;
-            HPLabel2.Location = new Point(73, 52);
+            HPLabel2.Location = new Point(100, 52);
             HPLabel2.Name = "HPLabel2";
             HPLabel2.Size = new Size(23, 15);
             HPLabel2.TabIndex = 5;
@@ -127,6 +130,7 @@
             attackButton.TabIndex = 10;
             attackButton.Text = "攻撃";
             attackButton.UseVisualStyleBackColor = true;
+            attackButton.Click += attackButton_Click;
             // 
             // guridButton
             // 
@@ -136,6 +140,7 @@
             guridButton.TabIndex = 11;
             guridButton.Text = "防御";
             guridButton.UseVisualStyleBackColor = true;
+            guridButton.Click += guridButton_Click;
             // 
             // nameInputLabel
             // 
