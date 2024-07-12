@@ -69,4 +69,18 @@ namespace WinFormsApp2
 
     }
 
+    public class RecordablePersonModel : PersonModel, RecordableObject
+    {
+
+        public RecordablePersonModel(int id, string name) : base(id, name)
+        {
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
 }

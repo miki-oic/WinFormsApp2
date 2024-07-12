@@ -31,10 +31,6 @@ namespace WinFormsApp2.Utilities
             field = new ColosseumModel("闘技場");
 
             player = fighter;
-            playerLabel1.Text = fighter.GetName();
-            playerLabel2.Text = wizard.GetName();
-            HPLabel1.Text = fighter.GetHitPoint().ToString();
-            HPLabel2.Text = wizard.GetHitPoint().ToString();
         }
 
         private void DebugForm_Load(object sender, EventArgs e)
@@ -72,7 +68,6 @@ namespace WinFormsApp2.Utilities
         public void AddLogEntry(string name, string command)
         {
             string log = name + "は" + command;
-            listBox1.Items.Add(log);
         }
 
         private void guridButton_Click(object sender, EventArgs e)
