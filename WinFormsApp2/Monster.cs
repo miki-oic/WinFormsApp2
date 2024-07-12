@@ -40,7 +40,7 @@ namespace WinFormsApp2
 
         public int GetArmorClass()
         {
-           return armorClass;
+            return armorClass;
         }
 
         public int GetHitPoint()
