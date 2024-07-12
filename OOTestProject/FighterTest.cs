@@ -42,13 +42,13 @@ namespace OOTestProject
         public void GetLevelTest05()
         {
             Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
-            Assert.AreEqual(10, fighter.GetLevel());
+            Assert.AreEqual(0, fighter.GetLevel());
         }
 
         [TestMethod]
         public void GetArmorClassTest06()
         {
-            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 10);
             Assert.AreEqual(10, fighter.GetArmorClass());
         }
     }

@@ -96,7 +96,7 @@ namespace WinFormsApp2
             {
 
 
-                    hitPoint -= attacker.Attack() + armorClass;
+                    hitPoint -= attacker.Attack() - armorClass;
 
             }
             else
