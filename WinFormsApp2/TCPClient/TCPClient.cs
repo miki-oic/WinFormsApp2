@@ -69,5 +69,13 @@ namespace WinFormsApp2.TCPClient
             int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
             return Encoding.UTF8.GetString(buffer, 0, bytesRead);
         }
+
+        /// <summary>
+        /// サーバーにデータを非同期で送信します。
+        /// </summary>
+        /// <param name="data">送信するデータ</param>
+        public async Task SendDataAsync(string data)
+        {
+        }
     }
 }
