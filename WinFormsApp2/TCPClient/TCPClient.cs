@@ -1,21 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Sockets;
 
 namespace WinFormsApp2.TCPClient
 {
+    /// <summary>
+    /// TCPクライアントの機能を提供します。
+    /// </summary>
     class TCPClient
     {
         string _ip;
         ushort _port;
+        TcpClient _client;
+        bool _isConnecting;
 
+        /// <summary>
+        /// TCPクライアントのインスタンスを初期化します。
+        /// </summary>
+        /// <param name="ip">接続先のIPアドレス</param>
+        /// <param name="port">接続先のポート番号</param>
         public TCPClient(string ip, ushort port)
         {
             _ip = ip;
             _port = port;
+            _client = new TcpClient();
+            _isConnecting = false;
         }
     }
 }
