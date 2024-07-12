@@ -14,38 +14,41 @@ namespace OOTestProject
         public void GetNameTest01()
         {
             Fighter fighter = new FighterModel();
-            Assert.AreEqual("", fighter.GetName());
+            Assert.AreEqual("ゲストプレイヤー", fighter.GetName());
         }
 
         [TestMethod]
         public void GetNameTest02()
         {
-            Fighter fighter = new FighterModel("Fighter",2000,300);
+            Fighter fighter = new FighterModel("Fighter",2000,300,0);
             Assert.AreEqual("Fighter", fighter.GetName());
         }
 
         [TestMethod]
-        public void GetNameTest03()
+        public void GetHitPointTest03()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300);
-            Assert.AreEqual(300, fighter.GetHitPoint());
+            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
+            Assert.AreEqual(2000, fighter.GetHitPoint());
         }
 
         [TestMethod]
-        public void GetNameTest04()
+        public void GetStrenghTest04()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300);
+            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
             Assert.AreEqual(300, fighter.GetStrengh());
         }
 
-        public void GetNameTest05()
+        [TestMethod]
+        public void GetLevelTest05()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300);
+            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
             Assert.AreEqual(10, fighter.GetLevel());
         }
-        public void GetNameTest06()
+
+        [TestMethod]
+        public void GetArmorClassTest06()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300);
+            Fighter fighter = new FighterModel("Fighter", 2000, 300, 10);
             Assert.AreEqual(10, fighter.GetArmorClass());
         }
     }
