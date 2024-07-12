@@ -18,12 +18,12 @@ namespace WinFormsApp2
             InitializeComponent();
 
             // 戦士の生成
-            fighter = new FighterModel("アリオン", 8000, 2500,8);
+            fighter = new FighterModel(1,"アリオン", 8000, 2500,8);
             fighterForm = new FighterForm(fighter);
             fighterForm.Show();
 
             // 魔法使いの生成
-            wizard = new WizardModel("ワードナ", 4000, 5000, 9);
+            wizard = new WizardModel(2,"ワードナ", 4000, 5000, 9);
             wizardForm = new WizardForm(wizard);
             wizardForm.Show();
 

@@ -8,6 +8,7 @@ namespace WinFormsApp2
 {
     public interface Monster : Player
     {
+        char GetType();
     }
 
     public class MonsterModel : PlayerModel, Monster
@@ -22,61 +23,14 @@ namespace WinFormsApp2
             return experiencePoint;
         }
 
-        public Player AddObserver(Observer observer)
-        {
-            return this;
-        }
-
         public override int Attack()
         {
             return 0;
         }
 
-        public Player DamagedBy(Attacker attacker)
+        char Monster.GetType()
         {
-            hitPoint -= attacker.Attack() + armorClass;
-            return this;
+            return type;
         }
-
-        public int GetArmorClass()
-        {
-           return armorClass;
-        }
-
-        public int GetHitPoint()
-        {
-            return hitPoint;
-        }
-
-        public string GetJob()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetName()
-        {
-            return type.ToString();
-        }
-
-        public bool IsCollapsed()
-        {
-            return !IsOk();
-        }
-
-        public bool IsOk()
-        {
-            return hitPoint > 0;
-        }
-
-        public int GetLevel()
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetId()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

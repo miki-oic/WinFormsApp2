@@ -42,7 +42,7 @@ namespace OOTestProject
         {
 
             // string name, int hitPoint, int magicPoint
-            Wizard wizard = new WizardModel("Wizard", 2000, 150);
+            Wizard wizard = new WizardModel(2,"Wizard", 2000, 150,0);
             Assert.AreEqual(150, wizard.GetMagicPoint());
         }
 
