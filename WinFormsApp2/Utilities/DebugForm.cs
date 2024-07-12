@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp2.Debug
+namespace WinFormsApp2.Utilities
 {
     public partial class DebugForm : Form
     {
         public DebugForm()
         {
             InitializeComponent();
+        }
+
+        private void DebugForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameInputLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
