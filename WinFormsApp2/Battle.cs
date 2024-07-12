@@ -25,6 +25,8 @@ namespace WinFormsApp2
         public void AddEnemy(Monster monster)
         {
 
+            enemies.Add(monster.GetId(), monster);
+
         }
         public void Start()
         {

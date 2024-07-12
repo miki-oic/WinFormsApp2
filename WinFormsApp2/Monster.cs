@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Monster : Player
+    public interface Monster : Player
+    {
+    }
+
+    public class MonsterModel : PlayerModel, Monster
     {
         private int hitPoint;
         private int armorClass;
@@ -23,7 +27,7 @@ namespace WinFormsApp2
             return this;
         }
 
-        public int Attack()
+        public override int Attack()
         {
             return 0;
         }
@@ -68,5 +72,11 @@ namespace WinFormsApp2
         {
             throw new NotImplementedException();
         }
+
+        public int GetId()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
