@@ -26,7 +26,7 @@ namespace WinFormsApp2
         /// <param name="hitPoint">体力</param>
         /// <param name="faithPoint">信仰力</param>
     
-        public PriestModel(string name, int hitPoint, int faithPoint)
+        public PriestModel(int id,string name, int hitPoint, int faithPoint,int armorClass) : base(id,name,hitPoint,armorClass)
         {
             this.faithPoint = faithPoint;
         }
