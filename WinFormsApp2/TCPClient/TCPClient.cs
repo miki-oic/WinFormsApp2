@@ -27,5 +27,10 @@ namespace WinFormsApp2.TCPClient
             _client = new TcpClient();
             _isConnecting = false;
         }
+
+        /// <summary>
+        /// 現在の接続状態を示します。
+        /// </summary>
+        public bool IsConnecting => _isConnecting;
     }
 }
