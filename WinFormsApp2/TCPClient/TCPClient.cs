@@ -32,5 +32,14 @@ namespace WinFormsApp2.TCPClient
         /// 現在の接続状態を示します。
         /// </summary>
         public bool IsConnecting => _isConnecting;
+
+        /// <summary>
+        /// サーバーへの非同期接続を試みます。
+        /// </summary>
+        /// <returns>接続に成功した場合はtrue、それ以外はfalse</returns>
+        public async Task<bool> ConnectAsync()
+        {
+            return false;
+        }
     }
 }
