@@ -14,20 +14,22 @@ namespace WinFormsApp2
     public class Battle
     {
 
-        private Party party = null;
-        private Dictionary<int, Monster> enemies = new Dictionary<int, Monster>();
+        private Party party = new Party();
+        private Dictionary<int,Monster> enemy = new Dictionary<int, Monster>();
 
         public void AddParty(Party party)
         {
-
             this.party = party;
-
         }
 
         public void AddEnemy(Monster monster)
         {
 
-            enemies.Add(monster.GetId(), monster);
+            enemy.Add(monster.GetId(), monster);
+
+        }
+        public void Start()
+        {
 
         }
 
