@@ -76,6 +76,10 @@ namespace WinFormsApp2.TCPClient
         /// <param name="data">送信するデータ</param>
         public async Task SendDataAsync(string data)
         {
+            if (!_isConnecting)
+            {
+                throw new InvalidOperationException("クライアントは接続されていません。");
+            }
         }
     }
 }
