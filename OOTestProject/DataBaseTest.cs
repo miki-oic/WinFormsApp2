@@ -37,20 +37,25 @@ namespace OOTestProject
 
                 Fighter fighter = new FighterModel(
                     // int id
-                    reader.GetInt32(0),
+                    //reader.GetInt32(0),
+                    Convert.ToInt32(reader["id"]),
                     //(int) reader["id"],
                     // string name
-                    reader.GetString(1),
+                    //reader.GetString(1),
+                    Convert.ToString(reader["name"]),
                     //(string) reader["name"],
                     // int hitPoint
-                    reader.GetInt32(2),
+                    //reader.GetInt32(2),
+                    Convert.ToInt32(reader["hitPoint"]),
                     //(int) reader["hitPoint"],
                     // int strengh
-                    reader.GetInt32(3),
+                    //reader.GetInt32(3),
+                    Convert.ToInt32(reader["strengh"]),
                     //(int) reader["strengh"],
                     // int armorClass
-                    reader.GetInt32(4));
-                    //(int) reader["armorClass"]);
+                    //reader.GetInt32(4));
+                    Convert.ToInt32(reader["armorClass"]));
+                //(int) reader["armorClass"]);
                 //Assert.AreEqual("ゲストプレイヤー", fighter.GetName());
 
                 Debug.Print(fighter.ToString());
