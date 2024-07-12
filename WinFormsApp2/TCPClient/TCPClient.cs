@@ -91,6 +91,11 @@ namespace WinFormsApp2.TCPClient
         /// </summary>
         public void Disconnect()
         {
+            if (_client != null && _client.Connected)
+            {
+                _client.Close();
+                _isConnecting = false;
+            }
         }
     }
 }
