@@ -85,5 +85,12 @@ namespace WinFormsApp2.TCPClient
             byte[] buffer = Encoding.UTF8.GetBytes(data);
             await stream.WriteAsync(buffer, 0, buffer.Length);
         }
+
+        /// <summary>
+        /// サーバーとの接続を切断します。
+        /// </summary>
+        public void Disconnect()
+        {
+        }
     }
 }
