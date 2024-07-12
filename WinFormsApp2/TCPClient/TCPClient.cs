@@ -52,5 +52,14 @@ namespace WinFormsApp2.TCPClient
                 return false;
             }
         }
+
+        /// <summary>
+        /// サーバーからデータを非同期で受信します。
+        /// </summary>
+        /// <returns>受信したデータ</returns>
+        public async Task<string> ReceiveDataAsync()
+        {
+            return "";
+        }
     }
 }
