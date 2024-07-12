@@ -68,5 +68,10 @@ namespace WinFormsApp2
         {
             throw new NotImplementedException();
         }
+
+        public int GetId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
