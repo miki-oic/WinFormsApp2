@@ -60,13 +60,13 @@ namespace WinFormsApp2
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="id">ID</param>
         /// <param name="name">名前</param>
         /// <param name="hitPoint">体力</param>
         /// <param name="strengh">攻撃力</param>
-        /// <param name="job">職業</param>
         /// <param name="armorClass">防御力</param>
-       
-        public FighterModel(string name, int hitPoint, int strengh,int armorClass) : base(name, hitPoint,armorClass)
+
+        public FighterModel(int id, string name, int hitPoint, int strengh,int armorClass) : base(id, name, hitPoint, armorClass)
         {
 
             this.strengh = strengh;

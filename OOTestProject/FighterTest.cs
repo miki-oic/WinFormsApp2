@@ -20,35 +20,35 @@ namespace OOTestProject
         [TestMethod]
         public void GetNameTest02()
         {
-            Fighter fighter = new FighterModel("Fighter",2000,300,0);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
             Assert.AreEqual("Fighter", fighter.GetName());
         }
 
         [TestMethod]
         public void GetHitPointTest03()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
             Assert.AreEqual(2000, fighter.GetHitPoint());
         }
 
         [TestMethod]
         public void GetStrenghTest04()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
             Assert.AreEqual(300, fighter.GetStrengh());
         }
 
         [TestMethod]
         public void GetLevelTest05()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300, 0);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
             Assert.AreEqual(10, fighter.GetLevel());
         }
 
         [TestMethod]
         public void GetArmorClassTest06()
         {
-            Fighter fighter = new FighterModel("Fighter", 2000, 300, 10);
+            Fighter fighter = new FighterModel(1, "Fighter", 2000, 300, 0);
             Assert.AreEqual(10, fighter.GetArmorClass());
         }
     }
