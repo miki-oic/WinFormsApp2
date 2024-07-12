@@ -8,10 +8,9 @@ namespace WinFormsApp2
 {
     public interface Monster : Player
     {
-        int GetId();
     }
 
-    public class MonsterModel : PlayerModel,Monster
+    public class MonsterModel : PlayerModel, Monster
     {
         private int hitPoint;
         private int armorClass;
@@ -28,7 +27,7 @@ namespace WinFormsApp2
             return this;
         }
 
-        public int Attack()
+        public override int Attack()
         {
             return 0;
         }
@@ -78,5 +77,6 @@ namespace WinFormsApp2
         {
             throw new NotImplementedException();
         }
+
     }
 }

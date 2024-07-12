@@ -19,12 +19,16 @@ namespace WinFormsApp2
 
         public void AddParty(Party party)
         {
+
             this.party = party;
+
         }
 
         public void AddEnemy(Monster monster)
         {
-            enemies.Add(monster.GetId(),monster)
+
+            enemies.Add(monster.GetId(), monster);
+
         }
 
     }
