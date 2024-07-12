@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-
+    
     /// <summary>
     /// 戦士
     /// </summary>
@@ -103,5 +103,5 @@ namespace WinFormsApp2
         }
 
     }
-
+    
 }
