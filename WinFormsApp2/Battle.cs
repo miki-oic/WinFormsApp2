@@ -15,7 +15,7 @@ namespace WinFormsApp2
     {
 
         private Party party = new Party();
-        private Dictionary<int,Monster> enemy = new Dictionary<int, Monster>();
+        private Dictionary<int,Monster> enemies = new Dictionary<int, Monster>();
 
         public void AddParty(Party party)
         {
@@ -25,7 +25,7 @@ namespace WinFormsApp2
         public void AddEnemy(Monster monster)
         {
 
-            enemy.Add(monster.GetId(), monster);
+            enemies.Add(monster.GetId(), monster);
 
         }
         public void Start()

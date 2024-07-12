@@ -15,7 +15,7 @@ namespace OOTestProject
 
             new Attack(fighter, wizard, field);
 
-            Assert.AreEqual(900, wizard.GetHitPoint());
+            Assert.AreEqual(900 + wizard.GetArmorClass(), wizard.GetHitPoint());
 
         }
 

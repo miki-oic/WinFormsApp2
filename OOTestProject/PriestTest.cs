@@ -15,40 +15,40 @@ namespace OOTestProject
         public void GetNameTest01()
         {
             Priest priest = new PriestModel();
-            Assert.AreEqual("", priest.GetName());
+            Assert.AreEqual("ゲストプレイヤー", priest.GetName());
         }
 
         [TestMethod]
         public void GetNameTest02()
         {
-            Priest priest = new PriestModel("Priest", 3000, 100);
+            Priest priest = new PriestModel(3,"Priest", 3000, 100,10);
             Assert.AreEqual("Priest", priest.GetName());
         }
 
         [TestMethod]
-        public void GetNameTest03()
+        public void GetHitPointTest03()
         {
-            Priest priest = new PriestModel("Priest", 3000, 100);
-            Assert.AreEqual(300, priest.GetHitPoint());
+            Priest priest = new PriestModel(3,"Priest", 3000, 100,10);
+            Assert.AreEqual(3000, priest.GetHitPoint());
         }
 
         [TestMethod]
-        public void GetNameTest04()
+        public void GetFaithTest04()
         {
-            Priest priest = new PriestModel("Priest", 3000, 100);
-            Assert.AreEqual(300, priest.GetFaithPoint());
+            Priest priest = new PriestModel(3,"Priest", 3000, 100,10);
+            Assert.AreEqual(100, priest.GetFaithPoint());
         }
 
-        public void GetNameTest05()
+        public void GetLevelTest05()
         {
-            Priest priest = new PriestModel("Priest", 3000, 100);
-            Assert.AreEqual(10, priest.GetLevel());
+            Priest priest = new PriestModel(3,"Priest", 3000, 100,10);
+            Assert.AreEqual(0, priest.GetLevel());
         }
 
         [TestMethod]
-        public void GetNameTest06()
+        public void GetArmorClassTest06()
         {
-            Priest priest = new PriestModel("Priest", 3000, 100);
+            Priest priest = new PriestModel(3,"Priest", 3000, 100,10);
             Assert.AreEqual(10, priest.GetArmorClass());
         }
     }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+           // label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -38,12 +38,12 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(97, 61);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            //label1.AutoSize = true;
+            //label1.Location = new Point(97, 61);
+            //label1.Name = "label1";
+            //label1.Size = new Size(50, 20);
+            //label1.TabIndex = 0;
+            //label1.Text = "label1";
             // 
             // label2
             // 
@@ -100,7 +100,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+           // Controls.Add(label1);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -109,7 +109,7 @@
 
         #endregion
 
-        private Label label1;
+        //private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;

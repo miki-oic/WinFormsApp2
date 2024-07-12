@@ -28,23 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
-            playerLabel1 = new Label();
-            playerLabel2 = new Label();
-            HPLabel1 = new Label();
-            HPLabel2 = new Label();
-            nameLabel = new Label();
-            jobLabel = new Label();
-            HPLabel = new Label();
-            attackButton = new Button();
-            guridButton = new Button();
-            nameInputLabel = new Label();
-            jobInputLabel = new Label();
-            hpInputLabel = new Label();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // listBox1
@@ -201,35 +184,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(listBox1);
             Name = "DebugForm";
             Text = "DebugForm";
             Load += DebugForm_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox listBox1;
-        private Label playerLabel1;
-        private Label playerLabel2;
-        private Label HPLabel1;
-        private Label HPLabel2;
-        private Label nameLabel;
-        private Label jobLabel;
-        private Label HPLabel;
-        private Button attackButton;
-        private Button guridButton;
-        private Label nameInputLabel;
-        private Label jobInputLabel;
-        private Label hpInputLabel;
-        private Panel panel1;
-        private Panel panel2;
     }
 }
