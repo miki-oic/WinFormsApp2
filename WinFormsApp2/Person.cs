@@ -11,6 +11,8 @@ namespace WinFormsApp2
     public interface Person
     {
 
+        int GetId();
+
         string GetName();
 
     }
@@ -18,13 +20,22 @@ namespace WinFormsApp2
     public class PersonModel : Person
     {
 
+        private int id;
         private string name;
 
-        public PersonModel(string name)
+        public PersonModel(int id, string name)
         {
 
+            this.id = id;
             //Name = name;
             this.name = name;
+
+        }
+
+        public int GetId()
+        {
+
+            return id;
 
         }
 

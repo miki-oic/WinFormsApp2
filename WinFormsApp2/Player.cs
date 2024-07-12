@@ -64,7 +64,7 @@ namespace WinFormsApp2
         private int armorClass;
         private List<Observer> observers = new List<Observer>();
 
-        public PlayerModel() : base("ゲストプレイヤー")
+        public PlayerModel() : base(0, "ゲストプレイヤー")
         {
 
             hitPoint = 1000;
@@ -72,7 +72,7 @@ namespace WinFormsApp2
 
         }
 
-        public PlayerModel(string name, int hitPoint,int armorClass) : base(name)
+        public PlayerModel(int id, string name, int hitPoint, int armorClass) : base(id, name)
         {
 
             this.hitPoint = hitPoint;
@@ -171,6 +171,13 @@ namespace WinFormsApp2
         public static Player GetInstance() {
             
             return player;
+
+        }
+
+        public int GetId()
+        {
+
+            return 0;
 
         }
 

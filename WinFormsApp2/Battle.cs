@@ -10,20 +10,29 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Battle:NullObject
+
+    public class Battle
     {
-        Dictionary<string, string> party = new Dictionary<string, string>();
-        Dictionary<string, string> enemy = new Dictionary<string, string>();
+
+        private Party party = new Party();
+        private Dictionary<int,Monster> enemy = new Dictionary<int, Monster>();
 
         public void AddParty(Party party)
         {
+            this.party = party;
+        }
+
+        public void AddEnemy(Monster monster)
+        {
+
+            enemy.Add(monster.GetId(), monster);
 
         }
-        public void AddEnemy(Monster monster)
+        public void Start()
         {
 
         }
 
-        NullBattle nullBattle = NullBattle.getInstance();
     }
+
 }
