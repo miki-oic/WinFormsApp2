@@ -39,6 +39,13 @@ namespace WinFormsApp2
 
         }
 
+        public override string ToString()
+        {
+
+            return base.ToString() + "\nname" + name;
+
+        }
+
         //public string Name { get { return name; } set { name = value; } }
         public string GetName()
         {

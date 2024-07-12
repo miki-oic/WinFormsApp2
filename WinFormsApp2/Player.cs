@@ -80,6 +80,15 @@ namespace WinFormsApp2
 
         }
 
+        public override string ToString()
+        {
+
+            return base.ToString() + "\nlevel" + level
+                + "\nhitPoint" + hitPoint
+                + "\narmorClass" + armorClass;
+
+        }
+
         public int GetHitPoint()
         {
 

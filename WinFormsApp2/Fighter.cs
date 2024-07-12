@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WinFormsApp2
 {
@@ -72,6 +73,13 @@ namespace WinFormsApp2
             this.strengh = strengh;
 
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + "\nstrengh = " + strengh;
+
+        }
+
         public string GetJobName()
         {
             return "戦士";
