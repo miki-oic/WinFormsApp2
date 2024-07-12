@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp2
 {
-    public class Monster : Player
+    public interface Monster : Player
+    {
+        int GetId();
+    }
+
+    public class MonsterModel : PlayerModel,Monster
     {
         private int hitPoint;
         private int armorClass;
