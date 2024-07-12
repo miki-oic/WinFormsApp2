@@ -12,6 +12,11 @@ namespace WinFormsApp2.Utilities
 {
     public partial class DebugForm : Form
     {
+        private FighterForm fighterForm;
+        private Fighter fighter;
+        private WizardForm wizardForm;
+        private Wizard wizard;
+
         public DebugForm()
         {
             InitializeComponent();
