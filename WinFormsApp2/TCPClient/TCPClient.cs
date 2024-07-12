@@ -59,6 +59,11 @@ namespace WinFormsApp2.TCPClient
         /// <returns>受信したデータ</returns>
         public async Task<string> ReceiveDataAsync()
         {
+            if (!_isConnecting)
+            {
+                throw new InvalidOperationException("クライアントは接続されていません。");
+            }
+
             return "";
         }
     }
