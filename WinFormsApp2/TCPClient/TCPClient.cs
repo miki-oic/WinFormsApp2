@@ -64,7 +64,10 @@ namespace WinFormsApp2.TCPClient
                 throw new InvalidOperationException("クライアントは接続されていません。");
             }
 
-            return "";
+            NetworkStream stream = _client.GetStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+            return Encoding.UTF8.GetString(buffer, 0, bytesRead);
         }
     }
 }
