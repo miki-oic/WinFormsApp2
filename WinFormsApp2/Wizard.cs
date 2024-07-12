@@ -64,7 +64,6 @@ namespace WinFormsApp2
         /// <param name="name">名前</param>
         /// <param name="hitPoint">体力</param>
         /// <param name="magicPoint">魔法力</param>
-        /// <param name="job">職業</param>
         /// <param name="aromorClass">防御力</param>
 
         public WizardModel(int id, string name, int hitPoint, int magicPoint, int aromorClass) : base(id, name, hitPoint, aromorClass)

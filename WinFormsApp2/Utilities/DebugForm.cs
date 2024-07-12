@@ -7,81 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp2.MockForm;
 
 namespace WinFormsApp2.Utilities
 {
+
     public partial class DebugForm : Form
     {
-        private Fighter fighter;
-        private Wizard wizard;
-        private Field field;
-
-        private Player player;
 
         public DebugForm()
         {
+
             InitializeComponent();
 
-            // 戦士の生成
-            fighter = new FighterModel();
-
-            // 魔法使いの生成
-            wizard = new WizardModel();
-            // 闘技場の生成
-            field = new ColosseumModel("闘技場");
-
-            player = fighter;
         }
 
-        private void DebugForm_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+
+            new MockForm_k().Show();
 
         }
 
-        private void nameInputLabel_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
-        }
+            new Form1().Show();
 
-        private void playerLabel1_Click(object sender, EventArgs e)
-        {
-            player = fighter;
-        }
-        private void playerLabel2_Click(object sender, EventArgs e)
-        {
-            player = wizard;
-        }
-
-        private void attackButton_Click(object sender, EventArgs e)
-        {
-            if (player == null) { return; }
-            if (player == fighter)
-            {
-                AddLogEntry("戦士", "攻撃を行った！");
-            }
-            else
-            {
-                AddLogEntry("魔法使い", "攻撃を行った！");
-            }
-        }
-
-        public void AddLogEntry(string name, string command)
-        {
-            string log = name + "は" + command;
-        }
-
-        private void guridButton_Click(object sender, EventArgs e)
-        {
-            if(player == null) { return; }
-            if (player == fighter)
-            {
-                AddLogEntry("戦士", "防御を行った！");
-            }
-            else
-            {
-                AddLogEntry("魔法使い", "防御を行った！");
-            }
         }
 
     }
+
 }
