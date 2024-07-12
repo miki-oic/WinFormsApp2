@@ -39,7 +39,18 @@ namespace WinFormsApp2.TCPClient
         /// <returns>接続に成功した場合はtrue、それ以外はfalse</returns>
         public async Task<bool> ConnectAsync()
         {
-            return false;
+            try
+            {
+                await _client.ConnectAsync(_ip, _port);
+                _isConnecting = true;
+                return true;
+            }
+            catch (SocketException)
+            {
+                _isConnecting = false;
+                _client.Close();
+                return false;
+            }
         }
     }
 }
