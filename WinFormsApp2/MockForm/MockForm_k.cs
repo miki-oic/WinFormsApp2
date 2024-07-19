@@ -33,6 +33,13 @@ namespace WinFormsApp2.MockForm
         {
             InitializeComponent();
 
+
+            Initialize();
+
+        }
+
+        private void Initialize()
+        {
             player = new HeroModel();
 
             fighter = new FighterModel(1, "アリオン", 8000, 2500, 8);
@@ -46,8 +53,6 @@ namespace WinFormsApp2.MockForm
 
             name.Text = statePlayer.GetName();
             hp.Text = statePlayer.GetHitPoint().ToString();
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

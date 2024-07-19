@@ -20,6 +20,17 @@ namespace WinFormsApp2.MockForm
 
         int AC = 50;
 
+        public MockPlayer1(int hp,int maxhp,string _name,string _jub,int attackpoint,int playerLv,int ac)
+        {
+            HP = hp;
+            MAXHP = maxhp;
+            name = _name;
+            job = _jub;
+            AttackPoint = attackpoint;
+            PlayerLv = playerLv;
+            AC = ac;
+        }
+
 
         public Player AddObserver(Observer observer)
         {
@@ -94,6 +105,11 @@ namespace WinFormsApp2.MockForm
         public int GetId()
         {
             throw new NotImplementedException();
+        }
+
+        public int GetExperiencePoint()
+        {
+            return 1;
         }
     }
 }
