@@ -178,10 +178,6 @@ namespace WinFormsApp2
             return level;
         }
 
-        public int GetExperiencePoint()
-        {
-            return experiencePoint;
-        }
     }
 
     public class NullPlayer : Player
