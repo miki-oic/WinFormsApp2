@@ -23,6 +23,13 @@ namespace WinFormsApp2
             return 0;
         }
 
+        public override string GetJobName()
+        {
+
+            return "モンスター";
+
+        }
+
         char Monster.GetType()
         {
             return type;

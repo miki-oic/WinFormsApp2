@@ -94,5 +94,10 @@ namespace WinFormsApp2.MockForm
         {
             throw new NotImplementedException();
         }
+
+        public string GetJobName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

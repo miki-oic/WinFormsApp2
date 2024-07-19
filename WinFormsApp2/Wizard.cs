@@ -40,10 +40,14 @@ namespace WinFormsApp2
         {
             return 100;
         }
-        public string GetJobName()
+
+        public override string GetJobName()
         {
+
             return "魔術師";
+
         }
+
     }
     public class WizardModel : PlayerModel, Wizard
     {
@@ -73,9 +77,11 @@ namespace WinFormsApp2
 
         }
 
-        public string GetJobName()
+        public override string GetJobName()
         {
+
             return "魔術師";
+
         }
 
         /// <summary>

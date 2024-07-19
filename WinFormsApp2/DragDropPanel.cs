@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace WinFormsApp2
 {
@@ -46,7 +47,7 @@ namespace WinFormsApp2
             {
 
                 // ここに複写したときの振る舞いを実装する
-                setLocation(e.X, e.Y);
+                //setLocation(e.X, e.Y);
 
             }
             else if (DoDragDrop(this, DragDropEffects.Move) == DragDropEffects.Move)
@@ -73,6 +74,29 @@ namespace WinFormsApp2
         {
 
             // NOP
+
+        }
+
+    }
+
+    public class PlayerDragDropPanel : DragDropPanel
+    {
+
+        private Player player = NullPlayer.GetInstance();
+
+        public PlayerDragDropPanel AddPlayer(Player player)
+        {
+
+            this.player = player;
+
+            return this;
+
+        }
+
+        public Player GetPlayer()
+        {
+
+            return player;
 
         }
 

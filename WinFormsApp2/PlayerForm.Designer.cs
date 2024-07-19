@@ -35,7 +35,7 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             textBox2 = new TextBox();
-            panel1 = new DragDropPanel();
+            panel1 = new PlayerDragDropPanel();
             label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -155,7 +155,7 @@
         private ComboBox comboBox1;
         private TextBox textBox2;
         private Label label5;
-        private DragDropPanel panel1;
+        private PlayerDragDropPanel panel1;
         //private Label label5;
     }
 }

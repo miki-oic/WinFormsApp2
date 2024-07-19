@@ -89,14 +89,19 @@ namespace WinFormsApp2
             if (obj is DragDropPanel)
             {
 
-                DragDropPanel dragDropPanel = (obj as DragDropPanel);
+                PlayerDragDropPanel playerDragDropPanel = (obj as PlayerDragDropPanel);
 
+                new Attack(playerDragDropPanel.GetPlayer(), player, new ColosseumModel("闘技場"));
+
+                //MessageBox.Show(playerDragDropPanel.GetPlayer().GetName() + "がドロップされました");
+                /*
                 if (!Controls.Contains(dragDropPanel))
                 {
 
                     Controls.Add(dragDropPanel);
 
                 }
+                */
 
                 e.Effect = DragDropEffects.Copy;
                 //e.Effect = DragDropEffects.Move;
@@ -164,7 +169,21 @@ namespace WinFormsApp2
 
         }
 
-        protected void AddClassName(string name)
+        public PlayerForm AddPlayer(Player player)
+        {
+
+            this.player = player;
+
+            panel1.AddPlayer(player);
+
+            // 職業
+            AddClassName(player.GetJobName());
+
+            return this;
+
+        }
+
+        private void AddClassName(string name)
         {
 
             // 職業
