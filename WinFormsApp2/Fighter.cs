@@ -21,7 +21,6 @@ namespace WinFormsApp2
         int Slash();
         int GetStrengh();
 
-        string GetJobName();
     }
 
     public class FighterMock : PlayerModel, Fighter
@@ -40,10 +39,14 @@ namespace WinFormsApp2
         {
             return 100;
         }
-        public string GetJobName()
+
+        public override string GetJobName()
         {
+
             return "戦士";
+
         }
+
     }
 
     public class FighterModel : PlayerModel, Fighter
@@ -80,9 +83,11 @@ namespace WinFormsApp2
 
         }
 
-        public string GetJobName()
+        public override string GetJobName()
         {
+
             return "戦士";
+
         }
 
         /// <summary>

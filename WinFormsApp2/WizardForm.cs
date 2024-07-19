@@ -13,7 +13,7 @@ namespace WinFormsApp2
         {
 
             // 職業
-            AddClassName(wizard.GetJobName());
+            AddPlayer(wizard);
 
         }
 

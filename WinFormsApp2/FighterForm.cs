@@ -14,8 +14,8 @@ namespace WinFormsApp2
         public FighterForm(Fighter fighter) : base(fighter)
         {
 
-            // 職業
-            AddClassName(fighter.GetJobName());
+            AddPlayer(fighter);
+
         }
 
     }

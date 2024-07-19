@@ -16,11 +16,14 @@ namespace WinFormsApp2
     {
 
         private Party party = new Party();
-        private Dictionary<int,Monster> enemies = new Dictionary<int, Monster>();
+        private Dictionary<int, Monster> enemies = new Dictionary<int, Monster>();
+        private Dictionary<Attacker,Monster> targets = new Dictionary<Attacker,Monster>();
 
         public void AddParty(Party party)
         {
+
             this.party = party;
+
         }
 
         public void AddEnemy(Monster monster)
@@ -31,13 +34,16 @@ namespace WinFormsApp2
         }
         public void Start()
         {
+            targets.ToList().ForEach(targets =>
+            {
+                targets.Value.DamagedBy(targets.Key);
+            });
 
-            Attacker attacker = party.getPlayer(1);
+        }
 
-            Monster target = enemies[2];
-
-            target.DamagedBy(attacker);
-
+        public void TargetSetting(Attacker attacker, Monster target)
+        {
+            targets.Add(attacker, target);
         }
 
     }

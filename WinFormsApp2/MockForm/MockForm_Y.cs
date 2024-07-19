@@ -12,10 +12,10 @@ namespace WinFormsApp2.MockForm
 {
     public partial class MockForm_Y : Form
     {
-        MockPlayer1 player1 = new MockPlayer1();
-        MockPlayer2 player2 = new MockPlayer2();
-        MockPlayer3 player3 = new MockPlayer3();
-        MockPlayer4 player4 = new MockPlayer4();
+        MockPlayer1 player1 = new MockPlayer1(100,100,"太郎","漁師",120,1,13);
+        MockPlayer1 player2 = new MockPlayer1(200, 200, "たかし", "商人", 12, 24, 13);
+        MockPlayer1 player3 = new MockPlayer1(300, 300, "たけし", "農家", 1, 12, 13);
+        MockPlayer1 player4 = new MockPlayer1(400, 400, "斎藤", "裁縫師", 1200, 99, 13);
 
         public MockForm_Y()
         {

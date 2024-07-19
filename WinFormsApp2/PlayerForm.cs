@@ -59,6 +59,74 @@ namespace WinFormsApp2
             // オブザーバーの追加
             player.AddObserver(this);
 
+            // ドラッグ＆ドロップを実行可能にする
+            initializeDragDrop();
+
+        }
+
+        private void initializeDragDrop()
+        {
+
+            DragOver += event_DragOver;
+            DragDrop += event_DragDrop;
+            DragEnter += event_DragEnter;
+            AllowDrop = true;
+
+        }
+
+        private void event_DragOver(object sender, DragEventArgs e)
+        {
+
+            e.Effect = DragDropEffects.Copy;
+            //e.Effect = DragDropEffects.Move;
+
+        }
+
+        private void event_DragDrop(object sender, DragEventArgs e)
+        {
+
+            object obj = e.Data.GetData(DataFormats.Serializable);
+            if (obj is DragDropPanel)
+            {
+
+                PlayerDragDropPanel playerDragDropPanel = (obj as PlayerDragDropPanel);
+
+                new Attack(playerDragDropPanel.GetPlayer(), player, new ColosseumModel("闘技場"));
+
+                //MessageBox.Show(playerDragDropPanel.GetPlayer().GetName() + "がドロップされました");
+                /*
+                if (!Controls.Contains(dragDropPanel))
+                {
+
+                    Controls.Add(dragDropPanel);
+
+                }
+                */
+
+                e.Effect = DragDropEffects.Copy;
+                //e.Effect = DragDropEffects.Move;
+
+            }
+
+        }
+
+        private void event_DragEnter(object sender, DragEventArgs e)
+        {
+
+            if (e.Data.GetDataPresent(DataFormats.Serializable))
+            {
+
+                e.Effect = DragDropEffects.Copy;
+                //e.Effect = DragDropEffects.Move;
+
+            }
+            else
+            {
+
+                e.Effect = DragDropEffects.None;
+
+            }
+
         }
 
         /// <summary>
@@ -101,7 +169,21 @@ namespace WinFormsApp2
 
         }
 
-        protected void AddClassName(string name)
+        public PlayerForm AddPlayer(Player player)
+        {
+
+            this.player = player;
+
+            panel1.AddPlayer(player);
+
+            // 職業
+            AddClassName(player.GetJobName());
+
+            return this;
+
+        }
+
+        private void AddClassName(string name)
         {
 
             // 職業

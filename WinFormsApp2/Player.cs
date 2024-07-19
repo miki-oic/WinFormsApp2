@@ -24,6 +24,8 @@ namespace WinFormsApp2
         ///<returns>守備力</returns>
         int GetArmorClass();
 
+        string GetJobName();
+
         /// <summary>
         /// 指定された攻撃者からのダメージを受けます。
         /// </summary>
@@ -55,6 +57,8 @@ namespace WinFormsApp2
         ///</summary>
         ///<returns>レベル</returns>
         int GetLevel();
+
+        int GetExperiencePoint();
     }
 
     public abstract class PlayerModel : PersonModel, Player
@@ -62,6 +66,7 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
+        private int experiencePoint;
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base(0, "ゲストプレイヤー")
@@ -95,6 +100,13 @@ namespace WinFormsApp2
             return hitPoint;
 
         }
+
+        public int GetExperiencePoint()
+        {
+            return experiencePoint;
+        }
+
+        public abstract string GetJobName();
 
         public abstract int Attack();
 
@@ -226,7 +238,7 @@ namespace WinFormsApp2
 
         }
 
-        public string GetJob()
+        public string GetJobName()
         {
 
             return "";
@@ -261,6 +273,10 @@ namespace WinFormsApp2
 
         }
 
+        public int GetExperiencePoint()
+        {
+            return 0;
+        }
     }
 
 }
