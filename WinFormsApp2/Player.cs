@@ -62,6 +62,7 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
+        private int experiencePoint;
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base(0, "ゲストプレイヤー")
@@ -94,6 +95,11 @@ namespace WinFormsApp2
 
             return hitPoint;
 
+        }
+
+        public int GetExperiencePoint()
+        {
+            return experiencePoint;
         }
 
         public abstract int Attack();
