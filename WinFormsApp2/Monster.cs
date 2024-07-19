@@ -7,21 +7,15 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
     public interface Monster : Player
-    {
+    { 
         char GetType();
+
     }
 
     public class MonsterModel : PlayerModel, Monster
     {
-        private int hitPoint;
-        private int armorClass;
-        private int experiencePoint;
+        
         private char type;
-
-        public int GetExperiencePoint()
-        {
-            return experiencePoint;
-        }
 
         public override int Attack()
         {

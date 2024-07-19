@@ -55,6 +55,8 @@ namespace WinFormsApp2
         ///</summary>
         ///<returns>レベル</returns>
         int GetLevel();
+
+        int GetExperiencePoint();
     }
 
     public abstract class PlayerModel : PersonModel, Player
@@ -62,6 +64,7 @@ namespace WinFormsApp2
         private int level;
         private int hitPoint;
         private int armorClass;
+        private int experiencePoint;
         private List<Observer> observers = new List<Observer>();
 
         public PlayerModel() : base(0, "ゲストプレイヤー")
@@ -157,6 +160,10 @@ namespace WinFormsApp2
             return level;
         }
 
+        public int GetExperiencePoint()
+        {
+            return experiencePoint;
+        }
     }
 
     public class NullPlayer : Player
@@ -252,6 +259,10 @@ namespace WinFormsApp2
 
         }
 
+        public int GetExperiencePoint()
+        {
+            return 0;
+        }
     }
 
 }
