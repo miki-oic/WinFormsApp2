@@ -6,7 +6,7 @@ namespace TCPTest
     /// <summary>
     /// TCPクライアントの機能を提供します。
     /// </summary>
-    class TCPClient
+    public class TCPClient
     {
         string _ip;
         ushort _port;
@@ -38,12 +38,27 @@ namespace TCPTest
         /// サーバーへの非同期接続を試みます。
         /// </summary>
         /// <returns>接続に成功した場合はtrue、それ以外はfalse</returns>
-        public async Task<bool> ConnectAsync()
+        public async Task<bool> ConnectAsync(bool onConnectLog = false)
         {
+            if (_isConnecting)
+            {
+                Console.WriteLine("Connected");
+                return true;
+            }
+
             try
             {
+                if (_client.Client == null)
+                {
+                    _client = new TcpClient();
+                }
                 await _client.ConnectAsync(_ip, _port);
                 _isConnecting = true;
+                string onConnectMsg = await ReceiveDataAsync();
+                if (onConnectLog)
+                {
+                    Console.WriteLine($"OnConnect ReceiveData: {onConnectMsg}");
+                }
                 return true;
             }
             catch (SocketException)
@@ -68,7 +83,8 @@ namespace TCPTest
             NetworkStream stream = _client.GetStream();
             byte[] buffer = new byte[1024];
             int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
-            return Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            string result = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            return result;
         }
 
         /// <summary>
@@ -89,11 +105,20 @@ namespace TCPTest
 
         public async Task<string> SendReceiveDataAsync(string data, short waitTime = -1)
         {
+            bool flg = await ConnectAsync();
+            if (!flg)
+            {
+                Console.WriteLine("Connect Failed");
+                return "";
+            }
+
             await SendDataAsync(data);
 
             Thread.Sleep(__getWaitTime(waitTime));
 
             string result = await ReceiveDataAsync();
+
+            Disconnect();
 
             return result;
         }
@@ -113,7 +138,7 @@ namespace TCPTest
 
         private ushort __getWaitTime(short waitTime)
         {
-            return (waitTime <= 0) ? _defaultWaitTime : (ushort)waitTime;
+            return (waitTime < 0) ? _defaultWaitTime : (ushort)waitTime;
         }
     }
 }

@@ -9,16 +9,12 @@ namespace TCPTest
             Console.WriteLine("start");
             Start();
             Console.WriteLine("end");
+            Console.ReadLine();
         }
 
         static async void Start()
         {
-            TCPClient client = new TCPClient("127.0.0.1", 8080);
-            bool connect = await client.ConnectAsync();
-            if (!connect)
-            {
-                Console.WriteLine("接続に失敗しました");
-            }
+            TCPClient client = new TCPClient("127.0.0.1", 8080, 25);
 
             string response = await client.SendReceiveDataAsync("Hello World");
 
