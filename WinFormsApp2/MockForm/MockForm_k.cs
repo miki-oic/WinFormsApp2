@@ -12,6 +12,12 @@ namespace WinFormsApp2.MockForm
 {
     public partial class MockForm_k : Form
     {
+        private Fighter fighter;
+        private Wizard wizard;
+
+        private Player statePlayer;
+
+
         int count = 0;
 
         bool changePlayer = false;
@@ -26,14 +32,28 @@ namespace WinFormsApp2.MockForm
         public MockForm_k()
         {
             InitializeComponent();
-            
+
             player = new HeroModel();
+
+            fighter = new FighterModel(1, "アリオン", 8000, 2500, 8);
+            name1.Text = fighter.GetName();
+            hp1.Text = fighter.GetHitPoint().ToString();
+            wizard = new WizardModel(2, "ワードナ", 4000, 5000, 9);
+            name2.Text = wizard.GetName();
+            hp2.Text = wizard.GetHitPoint().ToString();
+
+            statePlayer = fighter;
+
+            name.Text = statePlayer.GetName();
+            hp.Text = statePlayer.GetHitPoint().ToString();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             command = new Attack();
-            AddLogEntry(player.GetName(), command.GetCommand());
+            AddLogEntry(statePlayer.GetName(), command.GetCommand());
             ChangePlayer();
         }
 
@@ -52,56 +72,61 @@ namespace WinFormsApp2.MockForm
         private void button2_Click(object sender, EventArgs e)
         {
             command = new Gurid();
-            AddLogEntry(player.GetName(), command.GetCommand());
+            AddLogEntry(statePlayer.GetName(), command.GetCommand());
             ChangePlayer();
         }
 
         private void MockForm_k_Load(object sender, EventArgs e)
         {
-            count++;
-            label1.Text = count.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             command = new Magic();
-            AddLogEntry(player.GetName(), command.GetCommand());
+            AddLogEntry(statePlayer.GetName(), command.GetCommand());
             ChangePlayer();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             command = new Escape();
-            AddLogEntry(player.GetName(), command.GetCommand());
+            AddLogEntry(statePlayer.GetName(), command.GetCommand());
             ChangePlayer();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             command = new CurseUnLock();
-            AddLogEntry(player.GetName(), command.GetCommand());
+            AddLogEntry(statePlayer.GetName(), command.GetCommand());
             ChangePlayer();
         }
 
         private void ChangePlayer()
         {
-            changeCount++;
             switch (changeCount)
             {
                 case 0:
-                    player = new HeroModel();
+                    statePlayer = wizard;
                     break;
                 case 1:
-                    player = new SamuraiModel();
-                    break;
-                case 2:
-                    player = new ThiefModel();
-                    changeCount = -1;
+                    statePlayer = fighter;
                     break;
             }
+            name.Text = statePlayer.GetName();
+            hp.Text = statePlayer.GetHitPoint().ToString();
+            changeCount++;
+            if(changeCount > 1)
+            {
+                changeCount = 0;
+            }
+        }
+
+        private void name1_Click(object sender, EventArgs e)
+        {
+
         }
     }
-    
+
     public interface MockPlayer
     {
         enum CharaTag
