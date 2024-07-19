@@ -10,7 +10,10 @@ namespace WinFormsApp2
         private Fighter fighter;
         private WizardForm wizardForm;
         private Wizard wizard;
+        private Enemy enemy;
         private Field field;
+
+        private Form2 form2;
 
         public Form1()
         {
@@ -26,6 +29,10 @@ namespace WinFormsApp2
             wizard = new WizardModel(2,"ÉèÅ[ÉhÉi", 4000, 5000, 9);
             wizardForm = new WizardForm(wizard);
             wizardForm.Show();
+            //ìGÇÃê∂ê¨
+            enemy = new EnemyModel(3, "ìG", 5000, 3000, 200);
+            form2 = new Form2(enemy);
+            form2.Show();
 
             // ì¨ãZèÍÇÃê∂ê¨
             field = new ColosseumModel("ì¨ãZèÍ");

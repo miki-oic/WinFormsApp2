@@ -94,9 +94,68 @@
         }
 
 
-        //public class Enemy
-        //{
+    }
 
+    public class EnemyModel : PlayerModel, Enemy
+    {
+
+        private int strength;
+
+        public EnemyModel()
+        {
+
+            strength = 100;
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <param name="name">名前</param>
+        /// <param name="hitPoint">体力</param>
+        /// <param name="strength">攻撃力</param>
+        /// <param name="aromorClass">防御力</param>
+
+        public EnemyModel(int id, string name, int hitPoint,int strength , int aromorClass) : base(id, name, hitPoint, aromorClass)
+        {
+
+           this.strength = strength;
+
+        }
+
+        //public string GetJobName()
+        //{
+        //    return "魔術師";
         //}
+
+        /// <summary>
+        /// 力を返します。
+        /// </summary>
+        /// <returns>力</returns>
+        public int GetStrength()
+        {
+
+            return strength;
+
+        }
+
+        public override int Attack()
+        {
+
+            return strength;
+        }
+
+        Enemy Enemy.AddObserver(Observer observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        Enemy Enemy.DamagedBy(Attacker attacker)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

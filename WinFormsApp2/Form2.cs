@@ -23,14 +23,16 @@ namespace WinFormsApp2
         {
             this.enemy = enemy;
 
-            enemyStatusLabel = new EnemyStatusLabel(enemy);
-            enemyStatusLabel.AutoSize = true;
-            enemyStatusLabel.Location = new Point(97, 61);
-            enemyStatusLabel.Name = "label1";
-            enemyStatusLabel.Size = new Size(50, 20);
-            enemyStatusLabel.TabIndex = 0;
-            enemyStatusLabel.Text = "* 状態の表示 *";
-            Controls.Add(enemyStatusLabel);
+            Label(true, 97, 61, "label1", 50, 20, 0, "* 状態の表示 *");
+            Label(true, 253, 61, "label2", 50, 20, 1, "label2");
+            Label(true, 97, 138, "label3", 50, 20, 2, "label3");
+            Label(true, 253, 138, "label4", 50, 20, 3, "label4");
+            Label(true, 97, 232, "label5", 50, 20, 4, "label5");
+            Label(true, 253, 232, "label6", 50, 20, 5, "label6");
+
+            if (enemyStatusLabel == null) {
+                return;
+            }
 
             InitializeComponent();
 
@@ -40,6 +42,19 @@ namespace WinFormsApp2
 
             UpdateInformation();
         }
+
+        private void Label(bool autosize,int locateX,int locateY,string name, int sizeX,int sizeY,int tabindex,string text)
+        {
+            enemyStatusLabel = new EnemyStatusLabel(enemy);
+            enemyStatusLabel.AutoSize = autosize;
+            enemyStatusLabel.Location = new Point(locateX, locateY);
+            enemyStatusLabel.Name = name;
+            enemyStatusLabel.Size = new Size(sizeX, sizeY);
+            enemyStatusLabel.TabIndex = tabindex;
+            enemyStatusLabel.Text = text;
+            Controls.Add(enemyStatusLabel);
+        }
+
 
         private void Initialize()
         {
