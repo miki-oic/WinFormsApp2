@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 namespace WinFormsApp2
 {
     public interface Monster : Player
-    { 
+    {
+
+        // 種類（ゴブリンやオークみたいなもの）
         char GetType();
 
     }
 
     public class MonsterModel : PlayerModel, Monster
     {
-        
         private char type;
 
         public override int Attack()

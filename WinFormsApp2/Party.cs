@@ -9,16 +9,20 @@ namespace WinFormsApp2
     public class Party
     {
         private int id;
-        private Dictionary<int,Player> member = new Dictionary<int, Player>();
+        private Dictionary<int, Player> member = new Dictionary<int, Player>();
 
         public int GetId()
         {
             return id;
         }
-        public Player GetPlayer(int id)
+
+        public Player getPlayer(int id)
         {
+
             return member[id];
+        
         }
+
     }
     
 }

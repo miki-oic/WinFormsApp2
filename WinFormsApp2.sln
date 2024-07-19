@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp2", "WinFormsApp2\WinFormsApp2.csproj", "{F97BB9FA-6F57-4305-8CD6-6DEBE0D9AFF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOTestProject", "OOTestProject\OOTestProject.csproj", "{7DCBE733-B821-4099-8230-B2242E08EBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOTestProject", "OOTestProject\OOTestProject.csproj", "{7DCBE733-B821-4099-8230-B2242E08EBD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPTest", "TCPTest\TCPTest.csproj", "{89717AC8-04E3-4AE8-85CB-EBBAB2132699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7DCBE733-B821-4099-8230-B2242E08EBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DCBE733-B821-4099-8230-B2242E08EBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DCBE733-B821-4099-8230-B2242E08EBD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89717AC8-04E3-4AE8-85CB-EBBAB2132699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89717AC8-04E3-4AE8-85CB-EBBAB2132699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89717AC8-04E3-4AE8-85CB-EBBAB2132699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89717AC8-04E3-4AE8-85CB-EBBAB2132699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

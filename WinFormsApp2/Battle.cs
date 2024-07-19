@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using WinFormsApp2.MockForm;
 
 namespace WinFormsApp2
 {
@@ -15,11 +16,13 @@ namespace WinFormsApp2
     {
 
         private Party party = new Party();
-        private Dictionary<int,Monster> enemies = new Dictionary<int, Monster>();
+        private Dictionary<int, Monster> enemies = new Dictionary<int, Monster>();
 
         public void AddParty(Party party)
         {
+
             this.party = party;
+
         }
 
         public void AddEnemy(Monster monster)
@@ -31,7 +34,16 @@ namespace WinFormsApp2
         public void Start()
         {
 
+            Attacker attacker = party.getPlayer(1);
 
+            Monster target = enemies[2];
+
+            target.DamagedBy(attacker);
+
+        }
+
+        public void TargetSetting(Attacker attacker, Monster target)
+        {
         }
 
     }

@@ -33,6 +33,8 @@
         /// <param name="observer"></param>
         /// <returns>オブザーバー</returns>
         Enemy AddObserver(Observer observer);
+
+
     }
 
     public class NullEnemy : Enemy
@@ -66,7 +68,7 @@
 
         public Enemy DamagedBy(Attacker attacker)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public int GetHitPoint()
@@ -84,7 +86,12 @@
             throw new NotImplementedException();
         }
 
+        public string GetName()
+        {
 
+            return "name";
+
+        }
 
 
         //public class Enemy
