@@ -13,9 +13,9 @@ namespace WinFormsApp2.MockForm
     public partial class MockForm_Y : Form
     {
         MockPlayer1 player1 = new MockPlayer1();
-        MockPlayer2 player2 = new MockPlayer2();
-        MockPlayer3 player3 = new MockPlayer3();
-        MockPlayer4 player4 = new MockPlayer4();
+        MockPlayer1 player2 = new MockPlayer1();
+        MockPlayer1 player3 = new MockPlayer1();
+        MockPlayer1 player4 = new MockPlayer1();
 
         public MockForm_Y()
         {
