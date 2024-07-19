@@ -30,10 +30,14 @@ namespace WinFormsApp2
         {
             this.faithPoint = faithPoint;
         }
-        public string GetJobName()
+
+        public override string GetJobName()
         {
+
             return "僧侶";
+
         }
+
         public int GetFaithPoint()
         {
             return faithPoint;

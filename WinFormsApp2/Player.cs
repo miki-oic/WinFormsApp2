@@ -24,6 +24,8 @@ namespace WinFormsApp2
         ///<returns>守備力</returns>
         int GetArmorClass();
 
+        string GetJobName();
+
         /// <summary>
         /// 指定された攻撃者からのダメージを受けます。
         /// </summary>
@@ -104,6 +106,8 @@ namespace WinFormsApp2
             return experiencePoint;
         }
 
+        public abstract string GetJobName();
+
         public abstract int Attack();
 
         public Player DamagedBy(Attacker attacker)
@@ -174,7 +178,6 @@ namespace WinFormsApp2
             return level;
         }
 
-        
     }
 
     public class NullPlayer : Player
@@ -235,7 +238,7 @@ namespace WinFormsApp2
 
         }
 
-        public string GetJob()
+        public string GetJobName()
         {
 
             return "";

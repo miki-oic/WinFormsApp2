@@ -107,9 +107,16 @@ namespace WinFormsApp2.MockForm
             throw new NotImplementedException();
         }
 
+        public string GetJobName()
+        {
+
+            return "#GetJobName()";
+
+        }
+
         public int GetExperiencePoint()
         {
-            return 1;
+            throw new NotImplementedException();
         }
     }
 }
